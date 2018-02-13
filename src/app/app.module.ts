@@ -4,21 +4,29 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+
+import { MenuPage } from "../pages/menu/menu";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import {LoginPage} from "../pages/login/login";
 import {MenuPage} from '../pages/menu/menu';
 import {HttpClientModule} from '@angular/common/http';
 import {MenuApiProvider} from '../providers/menu-api/menu-api';
+
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage,
-    MenuPage
 
+    LoginPage,
+
+    MenuPage
   ],
   imports: [
     BrowserModule,
@@ -29,7 +37,10 @@ import {MenuApiProvider} from '../providers/menu-api/menu-api';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,
+
+
+    LoginPage,
+
     MenuPage
   ],
   providers: [
