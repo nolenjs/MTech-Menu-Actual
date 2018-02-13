@@ -19,7 +19,7 @@ export class LoginPage {
   signUp(){
     this.firebase.auth.createUserWithEmailAndPassword(this.email, this.password).catch(function(error) {
       // Handle Errors here.
-      console.log(this.email)
+      console.log(this.email);
       let errorCode = error.code;
       let errorMessage = error.message;
       // [START_EXCLUDE]
