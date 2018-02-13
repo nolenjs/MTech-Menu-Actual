@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import {AngularFireAuth} from "angularfire2/auth";
+//import {AngularFireAuth} from "angularfire2/auth";
+import {User} from "../../interfaces/IUser";
 
 @Component({
   selector: 'page-login',
@@ -8,45 +9,36 @@ import {AngularFireAuth} from "angularfire2/auth";
 })
 export class LoginPage {
 
-  email: string;
-  password: string;
+  user = {} as User;
 
-  constructor(public navCtrl: NavController,
-              private firebase: AngularFireAuth) {
-
+  constructor(//private afAuth: AngularFireAuth,
+              public navCtrl: NavController) {
   }
-
-  signUp(){
-    this.firebase.auth.createUserWithEmailAndPassword(this.email, this.password).catch(function(error) {
-      // Handle Errors here.
-      console.log(this.email);
-      let errorCode = error.code;
-      let errorMessage = error.message;
-      // [START_EXCLUDE]
-      if (errorCode == 'auth/weak-password') {
-        alert('The password is too weak.');
-      } else {
-        alert(errorMessage);
+/*
+  async login(user: User) {
+    try {
+      const result = await this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
+      if (result) {
+        this.navCtrl.setRoot('HomePage');
       }
-      console.log(error);
-      // [END_EXCLUDE]
-    });
+    }
+    catch (e) {
+      console.error(e);
+    }
   }
 
-  signIn(){
-    this.firebase.auth.signInWithEmailAndPassword(this.email, this.password).catch(function(error) {
-      // Handle Errors here.
-      let errorCode = error.code;
-      let errorMessage = error.message;
-      // [START_EXCLUDE]
-      if (errorCode === 'auth/wrong-password') {
-        alert('Wrong password.');
-      } else {
-        alert(errorMessage);
+  async register(user: User) {
+    try {
+      const result = await this.afAuth.auth.createUserWithEmailAndPassword(
+        user.email,
+        user.password
+      );
+      if (result) {
+        this.navCtrl.setRoot('HomePage');
       }
-      console.log(error);
-      // [END_EXCLUDE]
-    });
-  }
-
+    } catch (e) {
+      console.error(e);
+    }
+  }*/
 }
+
