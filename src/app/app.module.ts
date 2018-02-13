@@ -11,6 +11,7 @@ import {LoginPage} from "../pages/login/login";
 import {MenuPage} from '../pages/menu/menu';
 import {HttpClientModule} from '@angular/common/http';
 import {MenuApiProvider} from '../providers/menu-api/menu-api';
+import {CurrencyPipe} from '@angular/common';
 
 
 @NgModule({
@@ -25,23 +26,20 @@ import {MenuApiProvider} from '../providers/menu-api/menu-api';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-
-
     LoginPage,
-
     MenuPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    MenuApiProvider
+    MenuApiProvider,
   ]
 })
 export class AppModule {}
