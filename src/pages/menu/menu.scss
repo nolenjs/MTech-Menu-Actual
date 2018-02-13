@@ -1,5 +1,14 @@
 page-menu {
   ion-card{
+    .menuTitleBox{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      ion-card-title{
+        margin-right: 5px;
+      }
+    }
     .ionCardTitle{
       display: flex;
       flex-direction: row;
