@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-import 'rxjs';
+import { map } from 'rxjs/operators/map';
 
 /*
   Generated class for the MenuApiProvider provider.
@@ -20,15 +20,16 @@ export class MenuApiProvider {
 
   getBreakfastMenuData(): Observable<any>{
     return this.http.get(`${this.url}/breakfast.json`)
-      .map((response: Response) => {
+      .pipe(
+      map((response: Response) => {
         return response;
-      });
+      }));
   }
   getLunchMenuData(): Observable<any>{
     return this.http.get(`${this.url}/lunchAndDinner.json`)
-      .map((response: Response) => {
+      .pipe(map((response: Response) => {
         return response;
-      });
+      }));
   }
 
 }
