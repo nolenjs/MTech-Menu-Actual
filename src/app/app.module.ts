@@ -9,35 +9,36 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {LoginPage} from "../pages/login/login";
 import {MenuPage} from '../pages/menu/menu';
+import {HttpClientModule} from '@angular/common/http';
+import {MenuApiProvider} from '../providers/menu-api/menu-api';
+//import {AngularFireAuthModule} from "angularFire2/auth";
 
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-
     LoginPage,
-
     MenuPage
   ],
   imports: [
     BrowserModule,
+    //AngularFireAuthModule,
     IonicModule.forRoot(MyApp),
+    HttpClientModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-
-
     LoginPage,
-
     MenuPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    MenuApiProvider
   ]
 })
 export class AppModule {}
