@@ -17,7 +17,7 @@ import { MenuApiProvider } from '../../providers/menu-api/menu-api';
 export class MenuPage {
 
   hour = new Date().getHours();
-  minuets = new Date().getMinutes();
+  minuet = new Date().getMinutes();
 
   breakfastInfo: any;
   lunchInfo: any;
