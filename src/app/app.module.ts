@@ -12,7 +12,7 @@ import {MenuPage} from '../pages/menu/menu';
 import {HttpClientModule} from '@angular/common/http';
 import {MenuApiProvider} from '../providers/menu-api/menu-api';
 //import {AngularFireAuthModule} from "angularFire2/auth";
-
+import {CurrencyPipe} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,7 @@ import {MenuApiProvider} from '../providers/menu-api/menu-api';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    MenuApiProvider
+    MenuApiProvider,
   ]
 })
 export class AppModule {}
