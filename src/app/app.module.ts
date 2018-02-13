@@ -9,6 +9,8 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {MenuPage} from '../pages/menu/menu';
+import {HttpClientModule} from '@angular/common/http';
+import {MenuApiProvider} from '../providers/menu-api/menu-api';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import {MenuPage} from '../pages/menu/menu';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -32,7 +35,8 @@ import {MenuPage} from '../pages/menu/menu';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    MenuApiProvider
   ]
 })
 export class AppModule {}

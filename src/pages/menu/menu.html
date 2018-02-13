@@ -14,26 +14,41 @@
 
 
 <ion-content>
+  <h1>Menu</h1>
 
   <!--Breakfast-->
   <div *ngIf="breakfastTime">
     <h2>Breakfast</h2>
 
-    <ion-card *ngFor="let food of breakfastInfo">
+    <ion-card>
 
-      <ion-card-title>{{ food.itemName }}</ion-card-title>
-      <p>{{ food.price }}</p>
+      <ion-card-title>Breakfast Sandwich</ion-card-title>
+      <p>priceForBagel: $2.75</p>
+      <p>priceForCroissant: $2.75</p>
+      <p>priceForMuffin: $2.50</p>
 
       <ion-card-content>
 
-        <ion-label>{{food.description}}</ion-label>
+        <ion-label>A breakfast sandwich with your choice of bread, egg, cheese, and meat </ion-label>
 
-        <ion-item *ngFor="let foodOptions of breakfastInfo">
+        <h2>Bread</h2>
 
-        <ion-label>{{foodOptions.options}}</ion-label>
-        <ion-checkbox></ion-checkbox>
+        <ion-item>
+          <ion-label>Croissant</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
 
-      </ion-item>
+        <ion-item>
+          <ion-label>Bagel</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>English Muffin</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+
+
 
       </ion-card-content>
 
