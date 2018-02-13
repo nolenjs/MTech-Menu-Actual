@@ -11,20 +11,19 @@ import {LoginPage} from "../pages/login/login";
 import {MenuPage} from '../pages/menu/menu';
 import {HttpClientModule} from '@angular/common/http';
 import {MenuApiProvider} from '../providers/menu-api/menu-api';
+//import {AngularFireAuthModule} from "angularFire2/auth";
 import {CurrencyPipe} from '@angular/common';
-
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-
     LoginPage,
-
     MenuPage
   ],
   imports: [
     BrowserModule,
+    //AngularFireAuthModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule,
   ],
