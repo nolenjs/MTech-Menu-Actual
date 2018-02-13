@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { MenuApiProvider } from '../../providers/menu-api/menu-api';
-import {HomePage} from '../home/home';
+//import {HomePage} from '../home/home';
 
 /**
  * Generated class for the MenuPage page.

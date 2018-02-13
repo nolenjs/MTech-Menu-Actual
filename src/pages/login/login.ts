@@ -10,35 +10,39 @@ import {User} from "../../interfaces/IUser";
 export class LoginPage {
 
   user = {} as User;
+  confirm: string;
+  show: boolean = false;
 
   constructor(//private afAuth: AngularFireAuth,
-              public navCtrl: NavController) {
+    public navCtrl: NavController) {
   }
-/*
-  async login(user: User) {
-    try {
-      const result = await this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
-      if (result) {
-        this.navCtrl.setRoot('HomePage');
+  /*
+    async login(user: User) {
+      try {
+        const result = await this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
+        if (result) {
+          this.navCtrl.setRoot('HomePage');
+        }
+      }
+      catch (e) {
+        console.error(e);
       }
     }
-    catch (e) {
-      console.error(e);
-    }
-  }
 
-  async register(user: User) {
-    try {
-      const result = await this.afAuth.auth.createUserWithEmailAndPassword(
-        user.email,
-        user.password
-      );
-      if (result) {
-        this.navCtrl.setRoot('HomePage');
+    async register(user: User) {
+      try {
+        const result = await this.afAuth.auth.createUserWithEmailAndPassword(
+          user.email,
+          user.password
+        );
+        if (result) {
+          this.navCtrl.setRoot('HomePage');
+        }
+      } catch (e) {
+        console.error(e);
       }
-    } catch (e) {
-      console.error(e);
-    }
-  }*/
+    }*/
+  addPasswordInput(){
+    this.show = true;
+  }
 }
-

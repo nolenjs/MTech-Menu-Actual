@@ -1,24 +1,29 @@
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="danger">
     <ion-title>Login</ion-title>
   </ion-navbar>
 
 </ion-header>
 <ion-content>
   <ion-card>
-    <img src="../../assets/imgs/MTech-Logo.png">
-    <ion-item>
-      <ion-label floating>Email Address</ion-label>
-      <ion-input type="text" [(ngModel)]="user.email"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label floating>Password</ion-label>
-      <ion-input type="password" [(ngModel)]="user.password"></ion-input>
-    </ion-item>
-
-    <button ion-button (click)="login(user)">Login</button>
-    <button ion-button color="light" (click)="register(user)">Register</button>
+    <img alt='Mountainland Grill Logo' src="../../assets/imgs/grillLogo.png">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Email Address</ion-label>
+        <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="show === true">
+        <ion-label floating>Confirm Password</ion-label>
+        <ion-input type='password' [(ngModel)]='confirm'></ion-input>
+      </ion-item>
+    </ion-list>
+    <button *ngIf="show === false" ion-button>Login</button>
+    <button *ngIf="show === false" ion-button color="light" (click)="addPasswordInput()">Register</button>
+    <button *ngIf="show === true" ion-button>Register</button>
   </ion-card>
 </ion-content>
