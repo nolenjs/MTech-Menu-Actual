@@ -1,0 +1,17 @@
+<ion-card>
+  <ion-title>Login</ion-title>
+  <ion-content>
+    <img src="../../assets/imgs/MTech-logo.png">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input (keyUp)="email" type="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input (keyUp)='password' type="text"></ion-input>
+      </ion-item>
+    </ion-list>
+    <button ion-button>Login</button>
+  </ion-content>
+</ion-card>
