@@ -16,6 +16,7 @@ import { MenuApiProvider } from '../../providers/menu-api/menu-api';
 })
 export class MenuPage {
 
+
   hour = new Date().getHours();
   minuet = new Date().getMinutes();
 
@@ -33,13 +34,13 @@ export class MenuPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad MenuPage');
 
-    if(this.hour >= 7  && this.hour < 11/*changes at 10:30*/) {
+    if(this.hour >= 7 /*opens at 8*/  && this.hour < 10/*changes at 10:30*/) {
       this.getBreakfast();
       this.breakfastTime = true;
       this.lunchTime = false;
     }
 
-    if(this.hour >=11  && this.hour < 20) {
+    if(this.hour >=10 && this.minuet >= 30  && this.hour < 20) {
       this.getLunchandDinner();
       this.breakfastTime = false;
       this.lunchTime = true;
