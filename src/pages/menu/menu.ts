@@ -83,7 +83,8 @@ export class MenuPage {
   }
 
   ordersubmitted(){
-    //this.navCtrl.push(OrderSubmitPage, {this.orderItems, this.orderPrice})
+
+    this.navCtrl.push(OrderSubmitPage, [this.orderItems, this.orderPrice])
 
   }
 
