@@ -42,7 +42,7 @@ export class MenuPage {
     }
 
     if(this.hour >=10 && this.minuet >= 30  && this.hour < 20) {
-      this.getLunchandDinner();git
+      this.getLunchandDinner();
       this.breakfastTime = false;
       this.lunchTime = true;
     }
