@@ -83,7 +83,11 @@ export class MenuPage {
   }
 
   ordersubmitted(){
+<<<<<<< HEAD
     //this.navCtrl.push(OrderSubmitPage, {this.orderItems, this.orderPrice})
+=======
+    this.navCtrl.push(OrderSubmitPage, [this.orderItems, this.orderPrice])
+>>>>>>> 59cbe916c21aa182ce463842bfc578ec45e73861
 
   }
 
