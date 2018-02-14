@@ -12,7 +12,7 @@ import {MenuPage} from '../pages/menu/menu';
 import {HttpClientModule} from '@angular/common/http';
 import {MenuApiProvider} from '../providers/menu-api/menu-api';
 
-import {AngularFireAuth, AngularFireAuthModule} from "angularFire2/auth";
+import { AngularFireAuthModule} from "angularFire2/auth";
 import {AngularFireModule} from "angularfire2";
 
 let config = {
