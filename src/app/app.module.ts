@@ -24,7 +24,6 @@ let config = {
   messagingSenderId: "382312556211"
 };
 import {OrderSubmitPage} from "../pages/order-submit/order-submit";
-//import {AngularFireAuthModule} from "angularFire2/auth";
 
 
 @NgModule({

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {NavController, ToastController} from 'ionic-angular';
 import {AngularFireAuth} from "angularfire2/auth";
 import {User} from "../../interfaces/IUser";
+import {MenuPage} from "../menu/menu";
 
 @Component({
   selector: 'page-login',
