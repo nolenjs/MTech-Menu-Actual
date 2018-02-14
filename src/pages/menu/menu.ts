@@ -10,7 +10,6 @@ import {OrderSubmitPage} from "../order-submit/order-submit";
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-menu',
   templateUrl: 'menu.html',
