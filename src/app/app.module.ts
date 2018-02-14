@@ -23,13 +23,17 @@ let config = {
   storageBucket: "mtechmenu.appspot.com",
   messagingSenderId: "382312556211"
 };
+import {OrderSubmitPage} from "../pages/order-submit/order-submit";
+//import {AngularFireAuthModule} from "angularFire2/auth";
+
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     LoginPage,
-    MenuPage
+    MenuPage,
+    OrderSubmitPage
   ],
   imports: [
     BrowserModule,
@@ -43,7 +47,8 @@ let config = {
     MyApp,
     HomePage,
     LoginPage,
-    MenuPage
+    MenuPage,
+    OrderSubmitPage
   ],
   providers: [
     StatusBar,

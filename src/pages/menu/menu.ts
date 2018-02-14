@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import {NavController, NavParams, ToastController} from 'ionic-angular';
 import { MenuApiProvider } from '../../providers/menu-api/menu-api';
-//import {HomePage} from '../home/home';
+import {OrderSubmitPage} from "../order-submit/order-submit";
 
 /**
  * Generated class for the MenuPage page.
@@ -25,23 +25,27 @@ export class MenuPage {
   breakfastTime: boolean;
   lunchTime: boolean;
 
+  orderPrice= [];
+  orderItems =[];
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public menuProvider: MenuApiProvider) {
+    public menuProvider: MenuApiProvider,
+    public toastCtrl: ToastController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MenuPage');
 
-    if(this.hour >= 7 /*opens at 8*/  && this.hour < 10/*changes at 10:30*/) {
+    if(this.hour >= 8 /*opens at 8*/  && this.hour < 11/*changes at 10:30*/) {
       this.getBreakfast();
       this.breakfastTime = true;
       this.lunchTime = false;
     }
 
-    if(this.hour >=10 && this.minuet >= 30  && this.hour < 20) {
-      this.getLunchandDinner();
+    if(this.hour >=11 && this.hour < 20) {
+      this.getLunchAndDinner();
       this.breakfastTime = false;
       this.lunchTime = true;
     }
@@ -54,12 +58,34 @@ export class MenuPage {
       console.log(this.breakfastInfo);
     });
   }
-  getLunchandDinner(){
+  getLunchAndDinner(){
     this.menuProvider.getLunchMenuData().subscribe((lunchMenu: any)=>{
       this.lunchInfo = lunchMenu;
 
       console.log(this.lunchInfo);
     });
   }
+
+  order(itemName, itemPrice){
+    this.orderItems.push(itemName);
+    this.orderPrice.push(Number(itemPrice));
+
+    let toast = this.toastCtrl.create({
+      message: `Your order of ${itemName} has been added`,
+      duration: 2000,
+      position: 'bottom'
+    });
+
+    console.log(this.orderPrice);
+    console.log(this.orderItems);
+
+    toast.present();
+  }
+
+  ordersubmitted(){
+    this.navCtrl.push(OrderSubmitPage, {this.orderItems, this.orderPrice})
+
+  }
+
 
 }
