@@ -219,10 +219,12 @@
         <br>
 
         <ion-list>
-          <ion-item radio-group *ngFor="let foodOptions of food.options">
-            <ion-label>{{foodOptions}}</ion-label>
-            <ion-radio value="{{foodOptions}}"></ion-radio>
-          </ion-item>
+          <div radio-group>
+            <ion-item *ngFor="let foodOptions of food.options">
+              <ion-label>{{foodOptions}}</ion-label>
+              <ion-radio value="{{foodOptions}}"></ion-radio>
+            </ion-item>
+          </div>
         </ion-list>
 
       </ion-card-content>
