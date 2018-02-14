@@ -35,7 +35,7 @@ export class MenuPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad MenuPage');
 
-    if(this.hour >= 7 /*opens at 8*/  && this.hour < 10/*changes at 10:30*/) {
+    if(this.hour >= 7 /*opens at 8*/  && this.hour < 11/*changes at 10:30*/) {
       this.getBreakfast();
       this.breakfastTime = true;
       this.lunchTime = false;
