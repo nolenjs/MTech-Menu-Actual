@@ -25,7 +25,7 @@ export class LoginPage {
           const result = await this.afAuth.auth.signInWithEmailAndPassword(this.user.email, this.user.password);
           if (result) {
             console.log("Signed IN!!!");
-            this.navCtrl.setRoot('MenuPage');
+            this.navCtrl.setRoot(MenuPage);
           }
         }
         catch (e) {
@@ -50,7 +50,7 @@ export class LoginPage {
             this.user.password
           );
           if (result) {
-            this.navCtrl.setRoot('MenuPage');
+            this.navCtrl.setRoot(MenuPage);
           }
         } catch (e) {
           console.error(e);
