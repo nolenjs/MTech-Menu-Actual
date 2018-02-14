@@ -139,6 +139,9 @@
 
       </ion-card-content>
 
+      <button ion-button color="danger" (click)="order(food.itemName, food.price);">ADD TO ORDER</button>
+
+
     </ion-card>
     <ion-card>
 
@@ -203,6 +206,9 @@
 
       </ion-card-content>
 
+      <button ion-button color="danger" (click)="order(food.itemName, food.price);">ADD TO ORDER</button>
+
+
     </ion-card>
 
     <ion-card *ngFor="let food of breakfastInfo">
@@ -228,6 +234,9 @@
         </ion-list>
 
       </ion-card-content>
+
+      <button ion-button color="danger" (click)="order(food.itemName, food.price);">ADD TO ORDER</button>
+
 
     </ion-card>
 
@@ -269,5 +278,7 @@
 
     </ion-card>
   </div>
+  <button ion-button secondary icon-end="md-restaurant" class="submit-button" (click)="ordersubmitted()"><p class="alignright">Submit Order</p></button>
+
 
 </ion-content>

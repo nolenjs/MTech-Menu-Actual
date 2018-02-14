@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
 import { MenuApiProvider } from '../../providers/menu-api/menu-api';
+import {OrderSubmitPage} from "../order-submit/order-submit";
 
 /**
  * Generated class for the MenuPage page.
@@ -80,5 +81,11 @@ export class MenuPage {
 
     toast.present();
   }
+
+  ordersubmitted(){
+    this.navCtrl.push(OrderSubmitPage, {this.orderItems, this.orderPrice})
+
+  }
+
 
 }

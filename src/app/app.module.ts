@@ -11,6 +11,7 @@ import {LoginPage} from "../pages/login/login";
 import {MenuPage} from '../pages/menu/menu';
 import {HttpClientModule} from '@angular/common/http';
 import {MenuApiProvider} from '../providers/menu-api/menu-api';
+import {OrderSubmitPage} from "../pages/order-submit/order-submit";
 //import {AngularFireAuthModule} from "angularFire2/auth";
 
 @NgModule({
@@ -18,7 +19,8 @@ import {MenuApiProvider} from '../providers/menu-api/menu-api';
     MyApp,
     HomePage,
     LoginPage,
-    MenuPage
+    MenuPage,
+    OrderSubmitPage
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,8 @@ import {MenuApiProvider} from '../providers/menu-api/menu-api';
     MyApp,
     HomePage,
     LoginPage,
-    MenuPage
+    MenuPage,
+    OrderSubmitPage
   ],
   providers: [
     StatusBar,
