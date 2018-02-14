@@ -22,8 +22,9 @@
         <ion-input type='password' [(ngModel)]='confirm'></ion-input>
       </ion-item>
     </ion-list>
-    <button *ngIf="show === false" ion-button>Login</button>
-    <button *ngIf="show === false" ion-button color="light" (click)="addPasswordInput()">Register</button>
-    <button *ngIf="show === true" ion-button>Register</button>
+    <button *ngIf="show === false" ion-button (click)="login()">Login</button>
+    <button *ngIf="show === false" ion-button color="light" (click)="changeShow(true)">Register</button>
+    <button *ngIf="show === true" ion-button (click)="register()">Register</button>
+    <button *ngIf="show === true" ion-button color="light" (click)="changeShow(false)">Login</button>
   </ion-card>
 </ion-content>

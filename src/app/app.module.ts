@@ -11,7 +11,18 @@ import {LoginPage} from "../pages/login/login";
 import {MenuPage} from '../pages/menu/menu';
 import {HttpClientModule} from '@angular/common/http';
 import {MenuApiProvider} from '../providers/menu-api/menu-api';
-//import {AngularFireAuthModule} from "angularFire2/auth";
+
+import {AngularFireAuth, AngularFireAuthModule} from "angularFire2/auth";
+import {AngularFireModule} from "angularfire2";
+
+let config = {
+  apiKey: "AIzaSyCCsdWt5E2-79LatdNWu77rKi2Bpe2cWOw",
+  authDomain: "mtechmenu.firebaseapp.com",
+  databaseURL: "https://mtechmenu.firebaseio.com",
+  projectId: "mtechmenu",
+  storageBucket: "mtechmenu.appspot.com",
+  messagingSenderId: "382312556211"
+};
 
 @NgModule({
   declarations: [
@@ -22,8 +33,9 @@ import {MenuApiProvider} from '../providers/menu-api/menu-api';
   ],
   imports: [
     BrowserModule,
-    //AngularFireAuthModule,
+    AngularFireAuthModule,
     IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(config),
     HttpClientModule,
   ],
   bootstrap: [IonicApp],
@@ -35,6 +47,7 @@ import {MenuApiProvider} from '../providers/menu-api/menu-api';
   ],
   providers: [
     StatusBar,
+
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MenuApiProvider,
