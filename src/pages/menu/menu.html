@@ -15,15 +15,15 @@
 
 
 <ion-content>
-  <h1>Menus</h1>
-
   <!--Breakfast-->
   <div *ngIf="breakfastTime">
+
+    <h2>Breakfast</h2>
 
     <ion-card>
 
       <div class="menuTitleBox">
-        <ion-card-title>Breakfast Sandwich</ion-card-title><ion-toggle></ion-toggle>
+        <ion-card-title>Breakfast Sandwich</ion-card-title>
       </div>
       <p>Price For Bagel: ionic $2.75</p>
       <p>Price For Croissant: $2.75</p>
@@ -159,8 +159,6 @@
 
         <h2>Toppings (choose 5)</h2>
 
-        <!--["peppers", "mushrooms", "onions", "tomatoes", "bacon", "ham",  "sausage", "cheddar cheese"],-->
-
         <ion-list>
 
           <ion-item>
@@ -237,21 +235,20 @@
       </ion-card-content>
 
       <button ion-button color="danger" (click)="order(food.itemName, food.price);">ADD TO ORDER</button>
-
-
     </ion-card>
 
-    <button ion-button secondary icon-end="md-restaurant" class="submit-button"><p class="alignright">Submit Order</p></button>
-
-
+    <button ion-button col="mtech-red" icon-end="md-restaurant" class="submit-button" (click)="ordersubmitted();"><p class="alignright">Submit Order</p></button>
   </div>
 
   <!--Lunch & Dinner-->
   <div *ngIf="lunchTime">
+
+    <h2>Lunch And Dinner</h2>
+
     <ion-card *ngFor="let food of lunchInfo">
 
       <div class="menuTitleBox">
-        <ion-card-title>{{food.itemName}}</ion-card-title><ion-toggle></ion-toggle>
+        <ion-card-title>{{food.itemName}}</ion-card-title>
       </div>
       <p>Price: {{food.price | currency}}</p>
 
@@ -276,11 +273,54 @@
         <button ion-button color="mtech-red" (click)="order(food.itemName, food.price);">ADD TO ORDER</button>
 
       </ion-card-content>
-
     </ion-card>
-  </div>
-  <button ion-button secondary icon-end="md-restaurant" class="submit-button" (click)="ordersubmitted()"><p class="alignright">Submit Order</p></button>
 
+    <ion-card>
+
+      <div class="menuTitleBox">
+        <ion-card-title>Sides</ion-card-title>
+      </div>
+
+      <ion-card-content>
+
+        <ion-list>
+
+          <div class="sidesOrder">
+            <ion-label>French Fries $1.50</ion-label>
+            <button ion-button color="mtech-red" (click)="order('French Fries', 1.50);">ADD TO ORDER</button>
+          </div>
+
+
+          <div class="sidesOrder">
+            <ion-label>Tatter Tots $1.50</ion-label>
+            <button ion-button color="mtech-red" (click)="order('Tater Tots', 1.50);">ADD TO ORDER</button>
+          </div>
+
+          <div class="sidesOrder">
+            <ion-label>Sweat Potato Fries $1.75</ion-label>
+            <button ion-button color="mtech-red" (click)="order('Sweat Potato Fries', 1.75);">ADD TO ORDER</button>
+          </div>
+
+          <div class="sidesOrder">
+            <ion-label>Onion Rings $1.50</ion-label>
+            <button ion-button color="mtech-red" (click)="order('Onion Rings', 1.50);">ADD TO ORDER</button>
+          </div>
+
+          <div class="sidesOrder">
+            <ion-label>Mozzarella Sticks $1.50</ion-label>
+            <button ion-button color="mtech-red" (click)="order('Mozzarella Sticks', 1.50);">ADD TO ORDER</button>
+          </div>
+
+        </ion-list>
+
+        <button ion-button color="mtech-red" (click)="order(food.itemName, food.price);">ADD TO ORDER</button>
+
+      </ion-card-content>
+    </ion-card>
+
+    <button ion-button col="mtech-red" icon-end="md-restaurant" class="submit-button" (click)="ordersubmitted();"><p class="alignright">Submit Order</p></button>
+
+  </div>
 
 </ion-content>
 
