@@ -33,7 +33,6 @@ export class MyApp {
 
       { title: 'Menu', component: MenuPage },
 
-      { title: 'Checkout', component: MenuPage}
 
 
 

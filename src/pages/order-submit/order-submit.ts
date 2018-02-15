@@ -17,7 +17,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
       background-color: cornsilk;
     }
     ion-card{
-      
+      max-width: 400px;
     }
     ion-card-content{
       display: flex;
