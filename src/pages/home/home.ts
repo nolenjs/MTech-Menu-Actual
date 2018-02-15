@@ -3,7 +3,14 @@ import { NavController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
+  styles: [`
+    ion-content{
+      background-color: cornsilk;
+    }
+
+
+  `]
 })
 export class HomePage {
 

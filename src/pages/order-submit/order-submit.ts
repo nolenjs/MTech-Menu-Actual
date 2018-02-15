@@ -12,6 +12,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 @Component({
   selector: 'page-order-submit',
   templateUrl: 'order-submit.html',
+  styles: [`
+    ion-content{
+      background-color: cornsilk;
+    }
+    ion-card{
+      
+    }
+    ion-card-content{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+  `]
 })
 export class OrderSubmitPage {
   menuPrice;
@@ -23,6 +38,7 @@ export class OrderSubmitPage {
   }
 
   ionViewDidLoad() {
+    this.menuPrice=[];
     console.log('ionViewDidLoad OrderSubmitPage', this.menuPrice);
   }
 
