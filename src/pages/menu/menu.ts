@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {NavController, NavParams, ToastController} from 'ionic-angular';
+import {NavController, ToastController} from 'ionic-angular';
 import { MenuApiProvider } from '../../providers/menu-api/menu-api';
 import {OrderSubmitPage} from "../order-submit/order-submit";
 
@@ -35,7 +35,6 @@ export class MenuPage {
 
   constructor(
     public navCtrl: NavController,
-    public navParams: NavParams,
     public menuProvider: MenuApiProvider,
     public toastCtrl: ToastController) {
   }
@@ -44,7 +43,7 @@ export class MenuPage {
     console.log('ionViewDidLoad MenuPage');
 
 
-    let date = new Date('December 17, 2018 11:031:00');
+    let date = new Date('December 17, 2018 8:01:00');
 
     this.hour = date.getHours();
     this.minutes = date.getMinutes();
@@ -101,7 +100,7 @@ export class MenuPage {
 
   ordersubmitted(){
 
-    this.navCtrl.push(OrderSubmitPage, [this.orderItems, this.orderPrice])
+      this.navCtrl.push(OrderSubmitPage, [this.orderItems, this.orderPrice])
 
   }
 
