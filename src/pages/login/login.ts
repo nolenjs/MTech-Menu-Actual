@@ -18,6 +18,7 @@ export class LoginPage {
   constructor(public afAuth: AngularFireAuth,
     public navCtrl: NavController,
     private toastCtrl: ToastController) {
+
   }
 
     async login() {
@@ -25,14 +26,14 @@ export class LoginPage {
           const result = await this.afAuth.auth.signInWithEmailAndPassword(this.user.email, this.user.password);
           if (result) {
             console.log("Signed IN!!!");
-            this.navCtrl.setRoot('MenuPage');
+            this.navCtrl.setRoot(MenuPage, );
           }
         }
         catch (e) {
           console.error(e);
           let toast = this.toastCtrl.create({
-            message: "Sorry! Your email or password is incorrect",
-            duration: 1500,
+            message: e.message,
+            duration: 1800,
             position: 'top'
           });
           toast.present();
@@ -50,17 +51,24 @@ export class LoginPage {
             this.user.password
           );
           if (result) {
-            this.navCtrl.setRoot('MenuPage');
+            console.log("Registered!!!");
+            this.navCtrl.setRoot(MenuPage, );
           }
         } catch (e) {
           console.error(e);
+          let toast = this.toastCtrl.create({
+            message: e.message,
+            duration: 1800,
+            position: 'top'
+          });
+          toast.present()
         }
         console.log("Passwords matched")
       }
       else{
         let toast = this.toastCtrl.create({
           message: "Please verify that your passwords match.",
-          duration: 1500,
+          duration: 1800,
           position: 'top'
         });
         toast.present()
