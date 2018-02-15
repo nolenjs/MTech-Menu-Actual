@@ -43,7 +43,7 @@ export class MenuPage {
     console.log('ionViewDidLoad MenuPage');
 
 
-    let date = new Date('December 17, 2018 11:031:00');
+    let date = new Date('December 17, 2018 8:01:00');
 
     this.hour = date.getHours();
     this.minutes = date.getMinutes();
