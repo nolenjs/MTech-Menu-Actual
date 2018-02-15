@@ -18,7 +18,6 @@ export class LoginPage {
   constructor(public afAuth: AngularFireAuth,
     public navCtrl: NavController,
     private toastCtrl: ToastController) {
-
   }
 
     async login() {
@@ -52,7 +51,7 @@ export class LoginPage {
           );
           if (result) {
             console.log("Registered!!!");
-            this.navCtrl.push(MenuPage );
+            this.navCtrl.push(MenuPage);
           }
         } catch (e) {
           console.error(e);
