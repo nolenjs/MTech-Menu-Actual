@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {NavController, NavParams, ToastController} from 'ionic-angular';
 import { MenuApiProvider } from '../../providers/menu-api/menu-api';
-//import {OrderSubmitPage} from "../order-submit/order-submit";
+import {OrderSubmitPage} from "../order-submit/order-submit";
 
 /**
  * Generated class for the MenuPage page.
@@ -16,9 +16,14 @@ import { MenuApiProvider } from '../../providers/menu-api/menu-api';
 })
 export class MenuPage {
 
+  private breakfastOpenTime: number = 8;
+  private breakfastCloseTime: number = 10;
+
+  private lunchOpenTime: number = 11;
+  private lunchCloseTime: number = 20;
 
   hour = new Date().getHours();
-  minuet = new Date().getMinutes();
+  minutes = new Date().getMinutes();
 
   breakfastInfo: any;
   lunchInfo: any;
@@ -38,13 +43,25 @@ export class MenuPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad MenuPage');
 
-    if(this.hour >= 8 /*opens at 8*/  && this.hour < 11/*changes at 10:30*/) {
+
+    let date = new Date('December 17, 2018 11:031:00');
+
+    this.hour = date.getHours();
+    this.minutes = date.getMinutes();
+
+    console.log('hour: ' + this.hour);
+    console.log('minutes: ' + this.minutes);
+
+    if(this.hour >= this.breakfastOpenTime && this.hour < this.breakfastCloseTime
+      || (this.hour == this.breakfastCloseTime && this.minutes <= 30)) {
+
       this.getBreakfast();
       this.breakfastTime = true;
       this.lunchTime = false;
     }
 
-    if(this.hour >=11 && this.hour < 20) {
+    else if( this.hour >= this.lunchOpenTime && this.hour < this.lunchCloseTime
+      || (this.hour == this.breakfastCloseTime && this.minutes >= 30)) {
       this.getLunchAndDinner();
       this.breakfastTime = false;
       this.lunchTime = true;
@@ -72,7 +89,7 @@ export class MenuPage {
 
     let toast = this.toastCtrl.create({
       message: `Your order of ${itemName} has been added`,
-      duration: 2000,
+      duration: 1000,
       position: 'bottom'
     });
 
@@ -90,3 +107,8 @@ export class MenuPage {
 
 
 }
+
+
+
+// WEBPACK FOOTER //
+// ./src/pages/menu/menu.ts
