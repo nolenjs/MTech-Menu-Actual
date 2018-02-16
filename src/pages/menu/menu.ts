@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {NavController, NavParams, ToastController} from 'ionic-angular';
+import {AlertController, NavController, NavParams, ToastController} from 'ionic-angular';
 import { MenuApiProvider } from '../../providers/menu-api/menu-api';
 import {OrderSubmitPage} from "../order-submit/order-submit";
 import {LoginPage} from "../login/login";
@@ -40,7 +40,8 @@ export class MenuPage {
     public navCtrl: NavController,
     private navParams: NavParams,
     public menuProvider: MenuApiProvider,
-    public toastCtrl: ToastController) {
+    public toastCtrl: ToastController,
+    public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
@@ -104,11 +105,7 @@ export class MenuPage {
 
 
   order(itemName, item){
-    let order = [];
-    // order.push({
-    //   name: item,
-    //   price: itemPrice
-    // });
+
     this.orderItems.push(item);
 
 
@@ -130,12 +127,12 @@ export class MenuPage {
       this.navCtrl.push(OrderSubmitPage, [{items: this.orderItems}])
     }
     else{
-      let toast = this.toastCtrl.create({
-        message: `You need to login/register to submit your order`,
-        duration: 1500,
-        position: 'bottom'
+      let alert = this.alertCtrl.create({
+        title: 'Before You Submit...',
+        subTitle: 'You first need to login or register and then your order will be submitted!!',
+        buttons: ['OK']
       });
-      toast.present();
+      alert.present();
       this.navCtrl.push(LoginPage, [true, this.orderItems, this.orderPrice])
     }
 

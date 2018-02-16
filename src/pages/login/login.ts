@@ -14,6 +14,8 @@ export class LoginPage {
 
   user = {} as User;
   confirm: string;
+  firstName: string;
+  lastName: string;
   show: boolean = false;
 
   constructor(public afAuth: AngularFireAuth,
@@ -27,6 +29,7 @@ export class LoginPage {
           const result = await this.afAuth.auth.signInWithEmailAndPassword(this.user.email, this.user.password);
           if (result) {
             console.log("Signed IN!!!");
+            console.log(this.user.email, this.user.password);
             if (this.navParams.data[0] === true){
               this.navCtrl.push(OrderSubmitPage, [this.navParams.data[1], this.navParams.data[2]])
             }
@@ -58,6 +61,7 @@ export class LoginPage {
           );
           if (result) {
             console.log("Registered!!!");
+            console.log(this.firstName, this.lastName, this.user.email, this.user.password, this.confirm);
             if (this.navParams.data[0] === true){
               this.navCtrl.push(OrderSubmitPage, [this.navParams.data[1], this.navParams.data[2]])
             }

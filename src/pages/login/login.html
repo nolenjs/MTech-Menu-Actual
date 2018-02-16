@@ -10,9 +10,17 @@
   <ion-card>
     <img alt='Mountainland Grill Logo' src="../../assets/imgs/grillLogo.png">
     <ion-list>
+      <ion-item *ngIf="show === true">
+        <ion-label floating>First Name</ion-label>
+        <ion-input [(ngModel)]='firstName'></ion-input>
+      </ion-item>
+      <ion-item *ngIf="show === true">
+        <ion-label floating>Last Name</ion-label>
+        <ion-input [(ngModel)]='lastName'></ion-input>
+      </ion-item>
       <ion-item>
         <ion-label floating>Email Address</ion-label>
-        <ion-input type="email" [(ngModel)]="user.email"></ion-input>
+        <ion-input type='email' [(ngModel)]="user.email"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label floating>Password</ion-label>
