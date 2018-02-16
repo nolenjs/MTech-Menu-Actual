@@ -44,7 +44,7 @@ export class MenuPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MenuPage');
-    this.date = new Date('December 17, 2018 8:01:00');
+    this.date = new Date('December 17, 2018 11:01:00');
     this.updateTime();
     this.menuChecker();
   }
