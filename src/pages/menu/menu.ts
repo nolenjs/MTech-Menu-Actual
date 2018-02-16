@@ -30,7 +30,6 @@ export class MenuPage {
   breakfastTime: boolean;
   lunchTime: boolean;
 
-  orderPrice= [];
   orderItems =[];
 
   constructor(
@@ -82,9 +81,13 @@ export class MenuPage {
     });
   }
 
-  order(itemName, itemPrice){
-    this.orderItems.push(itemName);
-    this.orderPrice.push(Number(itemPrice));
+  order(itemName, item){
+    let order = [];
+    // order.push({
+    //   name: item,
+    //   price: itemPrice
+    // });
+    this.orderItems.push(item);
 
     let toast = this.toastCtrl.create({
       message: `Your order of ${itemName} has been added`,
@@ -92,7 +95,6 @@ export class MenuPage {
       position: 'bottom'
     });
 
-    console.log(this.orderPrice);
     console.log(this.orderItems);
 
     toast.present();
@@ -100,7 +102,7 @@ export class MenuPage {
 
   ordersubmitted(){
 
-      this.navCtrl.push(OrderSubmitPage, [this.orderItems, this.orderPrice])
+      this.navCtrl.push(OrderSubmitPage, [{items: this.orderItems}])
 
   }
 

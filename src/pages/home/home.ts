@@ -7,7 +7,7 @@ import {LoginPage} from "../login/login";
   templateUrl: 'home.html',
   styles: [`
     ion-content{
-      background-color: oldlace;
+      /*background-color: oldlace;*/
     }
 
 
