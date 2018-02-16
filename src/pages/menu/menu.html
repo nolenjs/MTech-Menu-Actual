@@ -234,7 +234,7 @@
 
       </ion-card-content>
 
-      <button ion-button color="danger" (click)="order(food.itemName, food.itemName +  food.price);">ADD TO ORDER</button>
+      <button ion-button color="danger" (click)="order(food.itemName, food.itemName + ' ' + '$'+ food.price);">ADD TO ORDER</button>
     </ion-card>
 
     <button ion-button col="mtech-red" icon-end="md-restaurant" class="submit-button" (click)="ordersubmitted();"><p class="alignright">Submit Order</p></button>
@@ -270,7 +270,7 @@
           </div>
         </ion-list>
 
-        <button ion-button color="mtech-red" (click)="order(food.itemName, food.itemName +  food.price);">ADD TO ORDER</button>
+        <button ion-button color="mtech-red" (click)="order(food.itemName, food.itemName + ' ' + '$' + food.price);">ADD TO ORDER</button>
 
       </ion-card-content>
     </ion-card>
