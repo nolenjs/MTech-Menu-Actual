@@ -140,7 +140,8 @@
 
       </ion-card-content>
 
-      <button ion-button color="light" (click)="order('Breakfast Sandwich', 2.75);">ADD TO ORDER</button>
+      <button ion-button color="light" (click)="order('Breakfast Sandwich', 'Breakfast Sandwich    $2.75');">ADD TO ORDER</button>
+
 
 
     </ion-card>
@@ -205,7 +206,9 @@
 
       </ion-card-content>
 
-      <button ion-button color="light" (click)="order('Omelet', 2.95);">ADD TO ORDER</button>
+
+      <button ion-button color="light" (click)="order('Omelet', 'Omelet    $2.95');">ADD TO ORDER</button>
+
 
 
     </ion-card>
@@ -234,7 +237,9 @@
 
       </ion-card-content>
 
-      <button ion-button color="light" (click)="order(food.itemName, food.price);">ADD TO ORDER</button>
+
+      <button ion-button color="light" (click)="order(food.itemName, food.itemName + ' ' + '$'+ food.price);">ADD TO ORDER</button>
+
     </ion-card>
 
     <button ion-button col="mtech-red" icon-end="md-restaurant" class="submit-button" (click)="ordersubmitted();"><p class="alignright">Submit Order</p></button>
@@ -270,7 +275,9 @@
           </div>
         </ion-list>
 
-        <button ion-button color="light" (click)="order(food.itemName, food.price);">ADD TO ORDER</button>
+
+        <button ion-button color="light" (click)="order(food.itemName, food.itemName + ' ' + '$' + food.price);">ADD TO ORDER</button>
+
 
       </ion-card-content>
     </ion-card>
@@ -287,28 +294,38 @@
 
           <div class="sidesOrder">
             <ion-label>French Fries $1.50</ion-label>
-            <button ion-button color="light" (click)="order('French Fries', 1.50);">ADD</button>
+
+            <button ion-button color="light" (click)="order('French Fries', 'French Fries   $1.50');">ADD</button>
+
           </div>
 
 
           <div class="sidesOrder">
             <ion-label>Tatter Tots $1.50</ion-label>
-            <button ion-button color="light" (click)="order('Tater Tots', 1.50);">ADD</button>
+
+            <button ion-button color="light" (click)="order('Tater Tots', 'Tater Tots   $1.50');">ADD</button>
+
           </div>
 
           <div class="sidesOrder">
             <ion-label>Sweat Potato Fries $1.75</ion-label>
-            <button ion-button color="light" (click)="order('Sweat Potato Fries', 1.75);">ADD</button>
+
+            <button ion-button color="light" (click)="order('Sweat Potato Fries','Sweat Potato Fries    $1.75');">ADD</button>
+
           </div>
 
           <div class="sidesOrder">
             <ion-label>Onion Rings $1.50</ion-label>
-            <button ion-button color="light" (click)="order('Onion Rings', 1.50);">ADD</button>
+
+            <button ion-button color="light" (click)="order('Onion Rings', 'Onion Rings    $1.50');">ADD</button>
+
           </div>
 
           <div class="sidesOrder">
             <ion-label>Mozzarella Sticks $1.50</ion-label>
-            <button ion-button color="light" (click)="order('Mozzarella Sticks', 1.50);">ADD</button>
+
+            <button ion-button color="light" (click)="order('Mozzarella Sticks', 'Mozzerella Sticks    $1.50');">ADD</button>
+
           </div>
 
         </ion-list>

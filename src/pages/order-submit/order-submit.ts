@@ -14,32 +14,34 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'order-submit.html',
   styles: [`
     ion-content{
-      background-color: cornsilk;
+      /*background-color: cornsilk;*/
     }
     ion-card{
-      
+      margin: auto;
+      max-width: 400px;
+     
+     
     }
     ion-card-content{
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       justify-content: center;
       align-items: center;
     }
 
   `]
 })
+
 export class OrderSubmitPage {
-  menuPrice;
-  menuItems;
+  orderInformation;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.menuPrice = this.navParams.data[1];
-    this.menuItems = this.navParams.data[0];
+    this.orderInformation = this.navParams.data;
 
   }
 
   ionViewDidLoad() {
-    this.menuPrice=[];
-    console.log('ionViewDidLoad OrderSubmitPage', this.menuPrice);
+    console.log('ionViewDidLoad OrderSubmitPage');
+    console.log(this.orderInformation);
   }
 
 }

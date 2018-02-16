@@ -1,13 +1,16 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+
 import {MenuPage} from '../menu/menu';
 import {LoginPage} from '../login/login';
+
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
   styles: [`
     ion-content{
+
       background-color: white;
     }
     .menuButtonBox{
@@ -25,7 +28,10 @@ export class HomePage {
 
   constructor(public navCtrl: NavController) {
 
+
   }
+ Login(){
+
 
   gotToMenu(){
     this.navCtrl.push(MenuPage);
@@ -34,4 +40,7 @@ export class HomePage {
     this.navCtrl.push(LoginPage);
   }
 
+
 }
+
+

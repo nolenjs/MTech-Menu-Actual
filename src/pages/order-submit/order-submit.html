@@ -13,11 +13,11 @@
     <ion-card-header>
       Order:
     </ion-card-header>
-  <ion-card-content>
-  <div *ngFor="let items of menuItems">
-    <p>{{items}}</p>
-  </div>
-  </ion-card-content>
+    <ion-list>
+      <ion-item *ngFor="let item of orderInformation[0].items">
+        {{item}}
+      </ion-item>
+    </ion-list>
   </ion-card>
 </ion-content>
 
