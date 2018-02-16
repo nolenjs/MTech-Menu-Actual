@@ -130,6 +130,12 @@ export class MenuPage {
       this.navCtrl.push(OrderSubmitPage, [{items: this.orderItems}])
     }
     else{
+      let toast = this.toastCtrl.create({
+        message: `You need to login/register to submit your order`,
+        duration: 1500,
+        position: 'bottom'
+      });
+      toast.present();
       this.navCtrl.push(LoginPage, [true, this.orderItems, this.orderPrice])
     }
 
