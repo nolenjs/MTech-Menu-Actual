@@ -30,17 +30,19 @@ export class HomePage {
 
 
   }
- Login(){
+
+  Login() {
 
 
-  gotToMenu(){
+  }
+
+  gotToMenu() {
     this.navCtrl.push(MenuPage);
   }
-  gotToLogin(){
+
+  gotToLogin() {
     this.navCtrl.push(LoginPage);
   }
-
-
 }
 
 
