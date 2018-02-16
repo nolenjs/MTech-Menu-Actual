@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import {NavController, ToastController} from 'ionic-angular';
+import {NavController, NavParams, ToastController} from 'ionic-angular';
 import {AngularFireAuth} from "angularfire2/auth";
 import {User} from "../../interfaces/IUser";
 import {MenuPage} from "../menu/menu";
+import {OrderSubmitPage} from "../order-submit/order-submit";
 
 @Component({
   selector: 'page-login',
@@ -17,6 +18,7 @@ export class LoginPage {
 
   constructor(public afAuth: AngularFireAuth,
     public navCtrl: NavController,
+    private navParams: NavParams,
     private toastCtrl: ToastController) {
   }
 
@@ -25,7 +27,12 @@ export class LoginPage {
           const result = await this.afAuth.auth.signInWithEmailAndPassword(this.user.email, this.user.password);
           if (result) {
             console.log("Signed IN!!!");
-            this.navCtrl.push(MenuPage);
+            if (this.navParams.data[0] === true){
+              this.navCtrl.push(OrderSubmitPage, [this.navParams.data[1], this.navParams.data[2]])
+            }
+            else{
+              this.navCtrl.push(MenuPage, true);
+            }
           }
         }
         catch (e) {
@@ -51,7 +58,12 @@ export class LoginPage {
           );
           if (result) {
             console.log("Registered!!!");
-            this.navCtrl.push(MenuPage);
+            if (this.navParams.data[0] === true){
+              this.navCtrl.push(OrderSubmitPage, [this.navParams.data[1], this.navParams.data[2]])
+            }
+            else{
+              this.navCtrl.push(MenuPage, true);
+            }
           }
         } catch (e) {
           console.error(e);

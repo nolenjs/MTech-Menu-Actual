@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import {NavController, ToastController} from 'ionic-angular';
+import {NavController, NavParams, ToastController} from 'ionic-angular';
 import { MenuApiProvider } from '../../providers/menu-api/menu-api';
 import {OrderSubmitPage} from "../order-submit/order-submit";
+import {LoginPage} from "../login/login";
 
 /**
  * Generated class for the MenuPage page.
@@ -35,6 +36,7 @@ export class MenuPage {
 
   constructor(
     public navCtrl: NavController,
+    private navParams: NavParams,
     public menuProvider: MenuApiProvider,
     public toastCtrl: ToastController) {
   }
@@ -99,8 +101,12 @@ export class MenuPage {
   }
 
   ordersubmitted(){
-
-    this.navCtrl.push(OrderSubmitPage, [this.orderItems, this.orderPrice])
+    if (this.navParams.data === true){
+      this.navCtrl.push(OrderSubmitPage, [this.orderItems, this.orderPrice])
+    }
+    else{
+      this.navCtrl.push(LoginPage, [true, this.orderItems, this.orderPrice])
+    }
 
   }
 
