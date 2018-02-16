@@ -23,8 +23,12 @@ export class MenuPage {
   private lunchOpenTime: number = 11;
   private lunchCloseTime: number = 20;
 
+  private wednesday: number = 3;
+  private friday: number = 5;
+
   hour = new Date().getHours();
   minutes = new Date().getMinutes();
+  day = new Date().getDay();
 
   breakfastInfo: any;
   lunchInfo: any;
@@ -35,7 +39,6 @@ export class MenuPage {
   orderPrice = [];
   orderItems = [];
   date = new Date();
-  
 
   constructor(
     public navCtrl: NavController,
@@ -46,7 +49,9 @@ export class MenuPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MenuPage');
-    this.date = new Date('December 17, 2018 11:01:00');
+    this.date = new Date('February 21, 2018 8:01:00');
+    this.day = this.date.getDay();
+
     this.updateTime();
     this.menuChecker();
   }
@@ -73,6 +78,15 @@ export class MenuPage {
       this.breakfastTime = false;
       this.lunchTime = true;
     }
+
+    if(this.day === this.wednesday ){
+      console.log('wednesday');
+    }
+    if(this.day === this.friday ){
+      console.log('friday');
+    }
+
+
   }
 
   updateTime(){
