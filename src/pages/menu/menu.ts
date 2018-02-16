@@ -34,7 +34,7 @@ export class MenuPage {
   orderPrice = [];
   orderItems = [];
   date = new Date();
-  
+
   constructor(
     public navCtrl: NavController,
     private navParams: NavParams,
@@ -44,7 +44,7 @@ export class MenuPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MenuPage');
-   // let date = new Date('December 17, 2018 8:01:00');
+    this.date = new Date();
     this.updateTime();
     this.menuChecker();
   }
