@@ -8,8 +8,7 @@ import { NavController } from 'ionic-angular';
     ion-content{
       background-color: cornsilk;
     }
-
-
+    
   `]
 })
 export class HomePage {
