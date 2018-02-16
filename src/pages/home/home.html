@@ -15,7 +15,13 @@
         <img alt='Mountainland Grill Logo' src="../../assets/imgs/grillLogo.png">
     </ion-card>
 
-   <button ion-button secondary (click)="Login()">LOGIN</button>
+
+    <!--<button ion-button color="mtech-red" menuToggle>CLICK ME</button>-->
+    <div class="menuButtonBox">
+      <button ion-button color="mtech-red" (click)="gotToLogin()">LOGIN AND SIGN UP</button>
+      <button ion-button color="mtech-red" (click)="gotToMenu()">MENU</button>
+    </div>
+
 
 
 </ion-content>

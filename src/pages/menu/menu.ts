@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import {NavController, ToastController} from 'ionic-angular';
+import {NavController, NavParams, ToastController} from 'ionic-angular';
 import { MenuApiProvider } from '../../providers/menu-api/menu-api';
 import {OrderSubmitPage} from "../order-submit/order-submit";
+import {LoginPage} from "../login/login";
 
 /**
  * Generated class for the MenuPage page.
@@ -30,27 +31,35 @@ export class MenuPage {
   breakfastTime: boolean;
   lunchTime: boolean;
 
-  orderItems =[];
+
+  orderPrice = [];
+  orderItems = [];
+  date = new Date();
+  
 
   constructor(
     public navCtrl: NavController,
+    private navParams: NavParams,
     public menuProvider: MenuApiProvider,
     public toastCtrl: ToastController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MenuPage');
+    this.date = new Date('December 17, 2018 11:01:00');
+    this.updateTime();
+    this.menuChecker();
+  }
 
+  menuChecker(){
 
-    let date = new Date('December 17, 2018 8:01:00');
-
-    this.hour = date.getHours();
-    this.minutes = date.getMinutes();
+    this.hour = this.date.getHours();
+    this.minutes = this.date.getMinutes();
 
     console.log('hour: ' + this.hour);
     console.log('minutes: ' + this.minutes);
 
-    if(this.hour >= this.breakfastOpenTime && this.hour < this.breakfastCloseTime
+    if (this.hour >= this.breakfastOpenTime && this.hour < this.breakfastCloseTime
       || (this.hour == this.breakfastCloseTime && this.minutes <= 30)) {
 
       this.getBreakfast();
@@ -58,7 +67,7 @@ export class MenuPage {
       this.lunchTime = false;
     }
 
-    else if( this.hour >= this.lunchOpenTime && this.hour < this.lunchCloseTime
+    else if (this.hour >= this.lunchOpenTime && this.hour < this.lunchCloseTime
       || (this.hour == this.breakfastCloseTime && this.minutes >= 30)) {
       this.getLunchAndDinner();
       this.breakfastTime = false;
@@ -66,20 +75,33 @@ export class MenuPage {
     }
   }
 
-  getBreakfast(){
-    this.menuProvider.getBreakfastMenuData().subscribe((breakfastMenu: any)=>{
+  updateTime(){
+    setInterval(() => {
+
+      this.date = new Date();
+      console.log('changed' + this.date);
+
+      this.menuChecker();
+
+    }, 60000);
+  }
+
+  getBreakfast() {
+    this.menuProvider.getBreakfastMenuData().subscribe((breakfastMenu: any) => {
       this.breakfastInfo = breakfastMenu;
 
       console.log(this.breakfastInfo);
     });
   }
-  getLunchAndDinner(){
-    this.menuProvider.getLunchMenuData().subscribe((lunchMenu: any)=>{
+
+  getLunchAndDinner() {
+    this.menuProvider.getLunchMenuData().subscribe((lunchMenu: any) => {
       this.lunchInfo = lunchMenu;
 
       console.log(this.lunchInfo);
     });
   }
+
 
   order(itemName, item){
     let order = [];
@@ -88,6 +110,7 @@ export class MenuPage {
     //   price: itemPrice
     // });
     this.orderItems.push(item);
+
 
     let toast = this.toastCtrl.create({
       message: `Your order of ${itemName} has been added`,
@@ -100,15 +123,21 @@ export class MenuPage {
     toast.present();
   }
 
-  ordersubmitted(){
 
+
+  ordersubmitted(){
+    if (this.navParams.data === true){
       this.navCtrl.push(OrderSubmitPage, [{items: this.orderItems}])
+    }
+    else{
+      this.navCtrl.push(LoginPage, [true, this.orderItems, this.orderPrice])
+    }
+
 
   }
 
 
 }
-
 
 
 // WEBPACK FOOTER //

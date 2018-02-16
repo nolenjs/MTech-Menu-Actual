@@ -31,7 +31,7 @@
 
       <ion-card-content>
 
-        <p>A breakfast sandwich with your choice of bread, egg, cheese, and meat</p>
+        <p style="font-size: 18px; color: black">A breakfast sandwich with your choice of bread, egg, cheese, and meat</p>
 
         <br>
 
@@ -140,20 +140,21 @@
 
       </ion-card-content>
 
-      <button ion-button color="danger" (click)="order('Breakfast Sandwich', 'Breakfast Sandwich    $2.75');">ADD TO ORDER</button>
+      <button ion-button color="light" (click)="order('Breakfast Sandwich', 'Breakfast Sandwich    $2.75');">ADD TO ORDER</button>
+
 
 
     </ion-card>
     <ion-card>
 
       <div class="menuTitleBox">
-        <ion-card-title>Omelet</ion-card-title><ion-toggle></ion-toggle>
+        <ion-card-title>Omelet</ion-card-title>
       </div>
       <p>Price: $2.95</p>
 
       <ion-card-content>
 
-        <p>A 3 egg omelet with your choice of toppings</p>
+        <p style="font-size: 18px; color: black">A 3 egg omelet with your choice of toppings</p>
 
         <br>
 
@@ -205,7 +206,9 @@
 
       </ion-card-content>
 
+
       <button ion-button color="light" (click)="order('Omelet', 'Omelet    $2.95');">ADD TO ORDER</button>
+
 
 
     </ion-card>
@@ -213,13 +216,13 @@
     <ion-card *ngFor="let food of breakfastInfo">
 
       <div class="menuTitleBox">
-        <ion-card-title>{{food.itemName}}</ion-card-title><ion-toggle></ion-toggle>
+        <ion-card-title>{{food.itemName}}</ion-card-title>
       </div>
       <p>Price: {{food.price | currency}}</p>
 
       <ion-card-content>
 
-        <p>{{food.description}}</p>
+        <p style="font-size: 18px; color: black">{{food.description}}</p>
 
         <br>
 
@@ -234,7 +237,9 @@
 
       </ion-card-content>
 
-      <button ion-button color="danger" (click)="order(food.itemName, food.itemName + ' ' + '$'+ food.price);">ADD TO ORDER</button>
+
+      <button ion-button color="light" (click)="order(food.itemName, food.itemName + ' ' + '$'+ food.price);">ADD TO ORDER</button>
+
     </ion-card>
 
     <button ion-button col="mtech-red" icon-end="md-restaurant" class="submit-button" (click)="ordersubmitted();"><p class="alignright">Submit Order</p></button>
@@ -254,7 +259,7 @@
 
       <ion-card-content>
 
-        <p>{{food.description}}</p>
+        <p style="font-size: 18px; color: black">{{food.description}}</p>
 
         <br>
 
@@ -270,7 +275,9 @@
           </div>
         </ion-list>
 
-        <button ion-button color="mtech-red" (click)="order(food.itemName, food.itemName + ' ' + '$' + food.price);">ADD TO ORDER</button>
+
+        <button ion-button color="light" (click)="order(food.itemName, food.itemName + ' ' + '$' + food.price);">ADD TO ORDER</button>
+
 
       </ion-card-content>
     </ion-card>
@@ -287,28 +294,38 @@
 
           <div class="sidesOrder">
             <ion-label>French Fries $1.50</ion-label>
-            <button ion-button color="mtech-red" (click)="order('French Fries', 'French Fries   $1.50');">ADD</button>
+
+            <button ion-button color="light" (click)="order('French Fries', 'French Fries   $1.50');">ADD</button>
+
           </div>
 
 
           <div class="sidesOrder">
             <ion-label>Tatter Tots $1.50</ion-label>
-            <button ion-button color="mtech-red" (click)="order('Tater Tots', 'Tater Tots   $1.50');">ADD</button>
+
+            <button ion-button color="light" (click)="order('Tater Tots', 'Tater Tots   $1.50');">ADD</button>
+
           </div>
 
           <div class="sidesOrder">
             <ion-label>Sweat Potato Fries $1.75</ion-label>
-            <button ion-button color="mtech-red" (click)="order('Sweat Potato Fries','Sweat Potato Fries    $1.75');">ADD</button>
+
+            <button ion-button color="light" (click)="order('Sweat Potato Fries','Sweat Potato Fries    $1.75');">ADD</button>
+
           </div>
 
           <div class="sidesOrder">
             <ion-label>Onion Rings $1.50</ion-label>
-            <button ion-button color="mtech-red" (click)="order('Onion Rings', 'Onion Rings    $1.50');">ADD</button>
+
+            <button ion-button color="light" (click)="order('Onion Rings', 'Onion Rings    $1.50');">ADD</button>
+
           </div>
 
           <div class="sidesOrder">
             <ion-label>Mozzarella Sticks $1.50</ion-label>
-            <button ion-button color="mtech-red" (click)="order('Mozzarella Sticks', 'Mozzerella Sticks    $1.50');">ADD</button>
+
+            <button ion-button color="light" (click)="order('Mozzarella Sticks', 'Mozzerella Sticks    $1.50');">ADD</button>
+
           </div>
 
         </ion-list>
@@ -316,7 +333,7 @@
       </ion-card-content>
     </ion-card>
 
-    <button ion-button col="mtech-red" icon-end="md-restaurant" class="submit-button" (click)="ordersubmitted();"><p class="alignright">Submit Order</p></button>
+    <button ion-button color="mtech-red" icon-end="md-restaurant" class="submit-button" (click)="ordersubmitted();"><p class="alignright">Submit Order</p></button>
 
   </div>
 
