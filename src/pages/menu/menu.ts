@@ -35,7 +35,7 @@ export class MenuPage {
   orderPrice = [];
   orderItems = [];
   date = new Date();
-  
+
 
   constructor(
     public navCtrl: NavController,
