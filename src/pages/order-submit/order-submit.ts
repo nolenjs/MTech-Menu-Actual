@@ -14,7 +14,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'order-submit.html',
   styles: [`
     ion-content{
-      /*background-color: cornsilk;*/
+      background-color: white;
     }
     ion-card{
       margin: auto;
