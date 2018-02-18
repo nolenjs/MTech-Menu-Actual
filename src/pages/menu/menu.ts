@@ -14,12 +14,6 @@ import {LoginPage} from "../login/login";
 @Component({
   selector: 'page-menu',
   templateUrl: 'menu.html',
-  styles: [`
-    ion-content{
-
-      background-color: white;
-    }
-    `]
 })
 export class MenuPage {
 
@@ -30,8 +24,6 @@ export class MenuPage {
   private lunchCloseTime: number = 20;
 
   private wednesday: number = 3;
-  private itsWednesday: boolean = false;
-  private itsFriday: boolean = false;
   private friday: number = 5;
 
   hour = new Date().getHours();
@@ -57,7 +49,7 @@ export class MenuPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MenuPage');
-    this.date = new Date('February 23, 2018 9:01:00');//21 for wednesday 23 for friday
+    this.date = new Date('February 21, 2018 8:01:00');
     this.day = this.date.getDay();
 
     this.updateTime();
@@ -89,13 +81,9 @@ export class MenuPage {
 
     if(this.day === this.wednesday ){
       console.log('wednesday');
-
-      this.itsWednesday = true;
     }
     if(this.day === this.friday ){
       console.log('friday');
-
-      this.itsFriday = true;
     }
 
 
@@ -141,7 +129,7 @@ export class MenuPage {
     let toast = this.toastCtrl.create({
       message: `Your order of ${itemName} has been added`,
       duration: 1000,
-      position: 'top'
+      position: 'bottom'
     });
 
     console.log(this.orderItems);
@@ -152,14 +140,12 @@ export class MenuPage {
 
 
   ordersubmitted(){
-    // if (this.navParams.data === true){
-    //   this.navCtrl.push(OrderSubmitPage, [{items: this.orderItems}])
-    // }
-    // else{
-    //   this.navCtrl.push(LoginPage, [true, this.orderItems, this.orderPrice])
-    // }
-
-    this.navCtrl.push(OrderSubmitPage, [{items: this.orderItems}])
+    if (this.navParams.data === true){
+      this.navCtrl.push(OrderSubmitPage, [{items: this.orderItems}])
+    }
+    else{
+      this.navCtrl.push(LoginPage, [true, this.orderItems, this.orderPrice])
+    }
 
 
   }
