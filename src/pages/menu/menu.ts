@@ -123,11 +123,6 @@ export class MenuPage {
 
 
   order(itemName, item){
-    let order = [];
-    // order.push({
-    //   name: item,
-    //   price: itemPrice
-    // });
     this.orderItems.push(item);
 
 
