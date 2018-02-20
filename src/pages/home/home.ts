@@ -4,6 +4,8 @@ import { NavController } from 'ionic-angular';
 import {MenuPage} from '../menu/menu';
 import {LoginPage} from '../login/login';
 
+import * as firebase from 'firebase/app';
+
 
 @Component({
   selector: 'page-home',
@@ -27,13 +29,32 @@ import {LoginPage} from '../login/login';
 export class HomePage {
 
   constructor(public navCtrl: NavController) {
-
-
   }
+  loading: boolean;
 
-  Login() {
-
-
+  ionViewWillEnter(){
+    this.loading = true;
+    firebase.auth().getRedirectResult()
+      .then((result) => {
+        console.log(result);
+        if (result.credential) {
+          // This gives you a Google Access Token. You can use it to access the Google API.
+          let token = result.credential.accessToken;
+          // ...
+        }
+        // The signed-in user info.
+        let googleUser = result.user;
+        console.log(googleUser);
+        this.gotToMenu();
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        console.log(error.code);
+        console.log(error.message);
+        console.log(error.email);
+        console.log(error.credentials)
+      });
+    this.loading = false;
   }
 
   gotToMenu() {

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {NavController, NavParams, ToastController} from 'ionic-angular';
 import {AngularFireAuth} from "angularfire2/auth";
+import * as firebase from 'firebase/app';
 import {User} from "../../interfaces/IUser";
 import {MenuPage} from "../menu/menu";
 import {OrderSubmitPage} from "../order-submit/order-submit";
@@ -17,6 +18,7 @@ export class LoginPage {
   firstName: string;
   lastName: string;
   show: boolean = false;
+  email: boolean = true;
 
   constructor(public afAuth: AngularFireAuth,
     public navCtrl: NavController,
@@ -24,37 +26,44 @@ export class LoginPage {
     private toastCtrl: ToastController) {
   }
 
-    async login() {
-        try {
-          const result = await this.afAuth.auth.signInWithEmailAndPassword(this.user.email, this.user.password);
-          if (result) {
-            console.log("Signed IN!!!");
-            console.log(this.user.email, this.user.password);
-            if (this.navParams.data[0] === true){
-              this.navCtrl.push(OrderSubmitPage, [this.navParams.data[1], this.navParams.data[2]])
-            }
-            else{
-              this.navCtrl.push(MenuPage, true);
-            }
+    async login(bool: boolean) {
+    this.email = bool;
+    //If using the email login and not the google login
+    if (this.email){
+      try {
+        const result = await this.afAuth.auth.signInWithEmailAndPassword(this.user.email, this.user.password);
+        if (result) {
+          console.log("Signed IN!!!");
+          console.log(this.user.email, this.user.password);
+          if (this.navParams.data[0] === true){
+            this.navCtrl.push(OrderSubmitPage, [this.navParams.data[1], this.navParams.data[2]])
+          }
+          else{
+            this.navCtrl.push(MenuPage, true);
           }
         }
-        catch (e) {
-          console.error(e);
-          let toast = this.toastCtrl.create({
-            message: e.message,
-            duration: 1800,
-            position: 'top'
-          });
-          toast.present();
-        }
-
       }
+      catch (e) {
+        console.error(e);
+        let toast = this.toastCtrl.create({
+          message: e.message,
+          duration: 1800,
+          position: 'top'
+        });
+        toast.present();
+      }
+    }
+    //If using the google login
+    else{
+      let provider = new firebase.auth.GoogleAuthProvider();
+      firebase.auth().signInWithRedirect(provider);
+    }
+  }
 
 
     async register() {
       if (this.confirm === this.user.password){
         try {
-
           const result = await this.afAuth.auth.createUserWithEmailAndPassword(
             this.user.email,
             this.user.password
@@ -90,6 +99,7 @@ export class LoginPage {
       }
     }
   changeShow(bool: boolean){
+    //If login
     this.show = bool;
   }
 }

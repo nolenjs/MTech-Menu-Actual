@@ -136,7 +136,6 @@ export class MenuPage {
       this.navCtrl.push(LoginPage, [true, this.orderItems, this.orderPrice])
     }
 
-
   }
 
 
