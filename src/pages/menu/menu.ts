@@ -118,18 +118,14 @@ export class MenuPage {
 
 
   order(itemName, item){
-    let order = [];
-    // order.push({
-    //   name: item,
-    //   price: itemPrice
-    // });
     this.orderItems.push(item);
 
 
     let toast = this.toastCtrl.create({
       message: `Your order of ${itemName} has been added`,
       duration: 1000,
-      position: 'bottom'
+      position: 'bottom',
+
     });
 
     console.log(this.orderItems);
