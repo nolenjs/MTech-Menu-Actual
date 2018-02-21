@@ -136,12 +136,14 @@ export class MenuPage {
 
 
   ordersubmitted(){
-    if (this.navParams.data === true){
-      this.navCtrl.push(OrderSubmitPage, [{items: this.orderItems}])
-    }
-    else{
-      this.navCtrl.push(LoginPage, [true, this.orderItems, this.orderPrice])
-    }
+    this.navCtrl.push(OrderSubmitPage, [{items: this.orderItems}])
+
+    // if (this.navParams.data === true){
+    //   this.navCtrl.push(OrderSubmitPage, [{items: this.orderItems}])
+    // }
+    // else{
+    //   this.navCtrl.push(LoginPage, [true, this.orderItems, this.orderPrice])
+    // }
 
 
   }
