@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {NavController, NavParams, ToastController} from 'ionic-angular';
+import {AlertController, NavController, NavParams, ToastController} from 'ionic-angular';
 import { MenuApiProvider } from '../../providers/menu-api/menu-api';
 import {OrderSubmitPage} from "../order-submit/order-submit";
 import {LoginPage} from "../login/login";
@@ -26,6 +26,11 @@ export class MenuPage {
   private wednesday: number = 3;
   private friday: number = 5;
 
+
+  private itsWednesday = false;
+  private itsFriday = false;
+
+
   hour = new Date().getHours();
   minutes = new Date().getMinutes();
   day = new Date().getDay();
@@ -44,12 +49,14 @@ export class MenuPage {
     public navCtrl: NavController,
     private navParams: NavParams,
     public menuProvider: MenuApiProvider,
-    public toastCtrl: ToastController) {
+    public toastCtrl: ToastController,
+    public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MenuPage');
-    this.date = new Date('February 21, 2018 8:01:00');
+    
+    this.date = new Date('February 21, 2018 8:01:00'); //23 = friday 21 = wednesday
     this.day = this.date.getDay();
 
     this.updateTime();
@@ -80,10 +87,10 @@ export class MenuPage {
     }
 
     if(this.day === this.wednesday ){
-      console.log('wednesday');
+      this.itsWednesday = true;
     }
     if(this.day === this.friday ){
-      console.log('friday');
+      this.itsFriday = true;
     }
 
 
@@ -97,7 +104,7 @@ export class MenuPage {
 
       this.menuChecker();
 
-    }, 60000);
+    }, 60000000);//60000
   }
 
   getBreakfast() {
@@ -118,14 +125,14 @@ export class MenuPage {
 
 
   order(itemName, item){
+
     this.orderItems.push(item);
 
 
     let toast = this.toastCtrl.create({
       message: `Your order of ${itemName} has been added`,
       duration: 1000,
-      position: 'bottom',
-
+      position: 'top'
     });
 
     console.log(this.orderItems);
@@ -136,18 +143,20 @@ export class MenuPage {
 
 
   ordersubmitted(){
-    this.navCtrl.push(OrderSubmitPage, [{items: this.orderItems}])
-
-    // if (this.navParams.data === true){
-    //   this.navCtrl.push(OrderSubmitPage, [{items: this.orderItems}])
-    // }
-    // else{
-    //   this.navCtrl.push(LoginPage, [true, this.orderItems, this.orderPrice])
-    // }
-
+    if (this.navParams.data === true){
+      this.navCtrl.push(OrderSubmitPage, [{items: this.orderItems}])
+    }
+    else{
+      let alert = this.alertCtrl.create({
+        title: 'Before You Submit...',
+        subTitle: 'You first need to login or register and then your order will be submitted!!',
+        buttons: ['OK']
+      });
+      alert.present();
+      this.navCtrl.push(LoginPage, [true, this.orderItems, this.orderPrice])
+    }
 
   }
-
 
 }
 
