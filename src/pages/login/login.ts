@@ -9,7 +9,13 @@ import {OrderSubmitPage} from "../order-submit/order-submit";
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
-  providers: [AngularFireAuth]
+  providers: [AngularFireAuth],
+  styles: [`
+    ion-content{
+
+      background-color: white;
+    }
+    `]
 })
 export class LoginPage {
 

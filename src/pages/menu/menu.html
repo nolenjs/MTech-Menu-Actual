@@ -12,6 +12,42 @@
   <div *ngIf="breakfastTime">
 
     <h2>Breakfast</h2>
+    
+    <ion-card *ngIf="itsWednesday">
+
+        <div class="menuTitleBox">
+          <ion-card-title>Waffle</ion-card-title>
+        </div>
+        <div class="itemImage">
+        </div>
+        <ion-card-content>
+            <p style="font-size: 18px; color: black">Waffles that you can top</p>
+        </ion-card-content>
+      <div class="sidesOrder">
+        <ion-label>Price For Full: $???????</ion-label>
+        <button ion-button color="light" (click)="order('Full Waffles', 1.50);">ADD</button>
+      </div>
+      <div class="sidesOrder">
+        <ion-label>Price For Half: $???????/2</ion-label>
+        <button ion-button color="light" (click)="order('Half Waffle', 1.50);">ADD</button>
+      </div>
+
+    </ion-card>
+
+      <ion-card *ngIf="itsFriday">
+
+          <div class="menuTitleBox">
+              <ion-card-title>Biscuits And Gravy</ion-card-title>
+          </div>
+          <p>Price: ????</p>
+
+          <ion-card-content>
+              <p style="font-size: 18px; color: black">Warm biscuits and gravy</p>
+          </ion-card-content>
+
+          <button ion-button color="light" (click)="order('Biscuits And Gravy', 'Biscuits And Gravy ??????');">ADD TO ORDER</button>
+
+      </ion-card>
 
     <ion-card>
 
@@ -22,6 +58,7 @@
       <p>Price For Croissant: $2.75</p>
       <p>Price For Muffin: $2.50</p>
 
+        <img class="itemImage" src="https://goo.gl/rtJa8S">
       <ion-card-content>
 
         <p style="font-size: 18px; color: black">A breakfast sandwich with your choice of bread, egg, cheese, and meat</p>
@@ -144,6 +181,8 @@
         <ion-card-title>Omelet</ion-card-title>
       </div>
       <p>Price: $2.95</p>
+        
+        <img class="itemImage" src="https://goo.gl/wpex36">
 
       <ion-card-content>
 
@@ -157,42 +196,42 @@
 
           <ion-item>
             <ion-label>Peppers</ion-label>
-            <ion-checkbox></ion-checkbox>
+            <ion-checkbox color="mtech-red"></ion-checkbox>
           </ion-item>
 
           <ion-item>
             <ion-label>Mushrooms</ion-label>
-            <ion-checkbox></ion-checkbox>
+            <ion-checkbox color="mtech-red"></ion-checkbox>
           </ion-item>
 
           <ion-item>
             <ion-label>Onions</ion-label>
-            <ion-checkbox></ion-checkbox>
+            <ion-checkbox color="mtech-red"></ion-checkbox>
           </ion-item>
 
           <ion-item>
             <ion-label>Tomatoes</ion-label>
-            <ion-checkbox></ion-checkbox>
+            <ion-checkbox color="mtech-red"></ion-checkbox>
           </ion-item>
 
           <ion-item>
             <ion-label>Bacon</ion-label>
-            <ion-checkbox></ion-checkbox>
+            <ion-checkbox color="mtech-red"></ion-checkbox>
           </ion-item>
 
           <ion-item>
             <ion-label>Ham</ion-label>
-            <ion-checkbox></ion-checkbox>
+            <ion-checkbox color="mtech-red"></ion-checkbox>
           </ion-item>
 
           <ion-item>
             <ion-label>Sausage</ion-label>
-            <ion-checkbox></ion-checkbox>
+            <ion-checkbox color="mtech-red"></ion-checkbox>
           </ion-item>
 
           <ion-item>
             <ion-label>Cheddar Cheese</ion-label>
-            <ion-checkbox></ion-checkbox>
+            <ion-checkbox color="mtech-red"></ion-checkbox>
           </ion-item>
 
         </ion-list>
@@ -212,6 +251,8 @@
         <ion-card-title>{{food.itemName}}</ion-card-title>
       </div>
       <p>Price: {{food.price | currency}}</p>
+
+        <img class="itemImage" src="{{food.imgUrl}}">
 
       <ion-card-content>
 
@@ -249,6 +290,7 @@
         <ion-card-title>{{food.itemName}}</ion-card-title>
       </div>
       <p>Price: {{food.price | currency}}</p>
+      <img class="itemImage" src={{food.imgUrl}}>
 
       <ion-card-content>
 
