@@ -55,7 +55,7 @@ export class MenuPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MenuPage');
-    
+
     this.date = new Date('February 21, 2018 8:01:00'); //23 = friday 21 = wednesday
     this.day = this.date.getDay();
 
@@ -143,17 +143,17 @@ export class MenuPage {
 
 
   ordersubmitted(){
-    if (this.navParams.data === true){
-      this.navCtrl.push(OrderSubmitPage, [{items: this.orderItems}])
+    if (this.navParams.data[0] === true){
+      this.navCtrl.push(OrderSubmitPage, [{items: this.orderItems}, this.navParams[1]])
     }
     else{
       let alert = this.alertCtrl.create({
         title: 'Before You Submit...',
-        subTitle: 'You first need to login or register and then your order will be submitted!!',
+        subTitle: 'You first need to login or register!!',
         buttons: ['OK']
       });
       alert.present();
-      this.navCtrl.push(LoginPage, [true, this.orderItems, this.orderPrice])
+      this.navCtrl.push(LoginPage, [true, {items: this.orderItems}, this.orderPrice])
     }
 
   }

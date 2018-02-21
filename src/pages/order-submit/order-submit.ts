@@ -57,7 +57,7 @@ export class OrderSubmitPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad OrderSubmitPage');
-    console.log(this.orderInformation);
+    console.log(this.orderInformation[0]);
   }
 
 

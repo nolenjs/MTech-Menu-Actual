@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {NavController, NavParams, ToastController} from 'ionic-angular';
 import {AngularFireAuth} from "angularfire2/auth";
 import * as firebase from 'firebase/app';
+import 'firebase/auth';
 import {User} from "../../interfaces/IUser";
 import {MenuPage} from "../menu/menu";
 import {OrderSubmitPage} from "../order-submit/order-submit";
@@ -9,13 +10,7 @@ import {OrderSubmitPage} from "../order-submit/order-submit";
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
-  providers: [AngularFireAuth],
-  styles: [`
-    ion-content{
-
-      background-color: white;
-    }
-    `]
+  providers: [AngularFireAuth]
 })
 export class LoginPage {
 
@@ -23,7 +18,7 @@ export class LoginPage {
   confirm: string;
   firstName: string;
   lastName: string;
-  show: boolean = false;
+  registering: boolean = false;
   email: boolean = true;
 
   constructor(public afAuth: AngularFireAuth,
@@ -36,36 +31,40 @@ export class LoginPage {
     this.email = bool;
     //If using the email login and not the google login
     if (this.email){
-      try {
-        const result = await this.afAuth.auth.signInWithEmailAndPassword(this.user.email, this.user.password);
-        this.displayResults(result)
-      }
-      catch (e) {
-        this.showError(e);
+
+        try {
+            const result = await this.afAuth.auth.signInWithEmailAndPassword(this.user.email, this.user.password);
+            this.displayResults(result);
+            this.user.password = '';
+        }
+        catch (e) {
+            this.showError(e);
       }
     }
     //If using the google login
     else{
       let provider = new firebase.auth.GoogleAuthProvider();
-      firebase.auth().signInWithPopup(provider);
-      firebase.auth().getRedirectResult()
-        .then((result) => {
+      firebase.auth().signInWithPopup(provider).then((result) => {
           console.log(result);
-            // The signed-in user info.
-            let googleUser = result.user;
-            console.log(googleUser);
+          if (result.credential) {
+              // This gives you a Google Access Token. You can use it to access the Google API.
+              let token = result.credential.accessToken;
+              // ...
+          }
+          // The signed-in user info.
+          let googleUser = result.user;
+          console.log(googleUser);
           if (this.navParams.data[0] === true){
-            this.navCtrl.push(OrderSubmitPage, [this.navParams.data[1], this.navParams.data[2], googleUser.displayName])
+              this.navCtrl.push(OrderSubmitPage, [
+                      this.navParams.data[1],
+                      this.navParams.data[2],
+                      googleUser.displayName
+              ]);
           }
           else{
-            this.navCtrl.push(MenuPage, [true, googleUser.displayName]);
+              this.navCtrl.push(MenuPage, [true, googleUser.displayName]);
           }
-          if (result.credential) {
-            // This gives you a Google Access Token. You can use it to access the Google API.
-            let token = result.credential.accessToken;
-            // ...
-          }
-        })
+      })
         .catch((error) => {
           // Handle Errors here.
           console.log(error.code);
@@ -78,18 +77,26 @@ export class LoginPage {
 
 
     async register() {
-      if (this.confirm === this.user.password){
-        try {
-          const result = await this.afAuth.auth.createUserWithEmailAndPassword(
-            this.user.email,
-            this.user.password
-          );
-          this.displayResults(result)
-        }
-        catch (e) {
-          this.showError(e)
-        }
-        console.log("Passwords matched")
+        if (this.confirm === this.user.password){
+          try {
+            const result = await this.afAuth.auth.createUserWithEmailAndPassword(
+                this.user.email,
+                this.user.password
+            );
+            this.displayResults(result);
+            let emailUser = firebase.auth().currentUser;
+              console.log(emailUser);
+            emailUser.updateProfile({
+                displayName: this.firstName + ' ' + this.lastName,
+                photoURL: ""
+            });
+            this.user.name = emailUser.displayName;
+            console.log(this.user.name);
+          }
+          catch (e) {
+              this.showError(e)
+          }
+          console.log("Passwords matched");
       }
       else{
         let toast = this.toastCtrl.create({
@@ -102,10 +109,10 @@ export class LoginPage {
     }
   changeShow(bool: boolean){
     //If login
-    this.show = bool;
+    this.registering = bool;
   }
 
-  displayResults(result){
+    displayResults(result){
     if (result) {
       console.log("Registered or Signed in!!!");
       if (this.navParams.data[0] === true){
@@ -127,3 +134,6 @@ export class LoginPage {
     toast.present();
   }
 }
+
+
+

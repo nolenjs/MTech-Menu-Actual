@@ -10,11 +10,11 @@
   <ion-card>
     <img alt='Mountainland Grill Logo' src="../../assets/imgs/grillLogo.png">
     <ion-list>
-      <ion-item *ngIf="show === true">
+      <ion-item *ngIf="registering === true">
         <ion-label floating>First Name</ion-label>
         <ion-input [(ngModel)]='firstName'></ion-input>
       </ion-item>
-      <ion-item *ngIf="show === true">
+      <ion-item *ngIf="registering === true">
         <ion-label floating>Last Name</ion-label>
         <ion-input [(ngModel)]='lastName'></ion-input>
       </ion-item>
@@ -26,15 +26,15 @@
         <ion-label floating>Password</ion-label>
         <ion-input type="password" [(ngModel)]="user.password"></ion-input>
       </ion-item>
-      <ion-item *ngIf="show === true">
+      <ion-item *ngIf="registering === true">
         <ion-label floating>Confirm Password</ion-label>
         <ion-input type='password' [(ngModel)]='confirm'></ion-input>
       </ion-item>
-      <button ion-button *ngIf="show===false" (click)="login(false)">Login through Google</button>
+      <button ion-button *ngIf="registering===false" (click)="login(false)">Login through Google</button>
     </ion-list>
-    <button *ngIf="show === false" ion-button (click)="login(true)">Login</button>
-    <button *ngIf="show === false" ion-button color="light" (click)="changeShow(true)">Register</button>
-    <button *ngIf="show === true" ion-button (click)="register()">Register</button>
-    <button *ngIf="show === true" ion-button color="light" (click)="changeShow(false)">Login</button>
+    <button *ngIf="registering === false" ion-button (click)="login(true)">Login</button>
+    <button *ngIf="registering === false" ion-button color="light" (click)="changeShow(true)">Register</button>
+    <button *ngIf="registering === true" ion-button (click)="register()">Register</button>
+    <button *ngIf="registering === true" ion-button color="light" (click)="changeShow(false)">Login</button>
   </ion-card>
 
