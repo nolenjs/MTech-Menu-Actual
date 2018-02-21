@@ -14,6 +14,7 @@ import {MenuApiProvider} from '../providers/menu-api/menu-api';
 
 import { AngularFireAuthModule} from "angularFire2/auth";
 import {AngularFireModule} from "angularfire2";
+import * as firebase from 'firebase/app';
 
 let config = {
   apiKey: "AIzaSyCCsdWt5E2-79LatdNWu77rKi2Bpe2cWOw",
@@ -25,6 +26,7 @@ let config = {
 };
 import {OrderSubmitPage} from "../pages/order-submit/order-submit";
 
+firebase.initializeApp(config);
 
 @NgModule({
   declarations: [

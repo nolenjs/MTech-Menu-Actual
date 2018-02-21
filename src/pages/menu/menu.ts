@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {NavController, NavParams, ToastController} from 'ionic-angular';
+import {AlertController, NavController, NavParams, ToastController} from 'ionic-angular';
 import { MenuApiProvider } from '../../providers/menu-api/menu-api';
 import {OrderSubmitPage} from "../order-submit/order-submit";
 import {LoginPage} from "../login/login";
@@ -49,11 +49,13 @@ export class MenuPage {
     public navCtrl: NavController,
     private navParams: NavParams,
     public menuProvider: MenuApiProvider,
-    public toastCtrl: ToastController) {
+    public toastCtrl: ToastController,
+    public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MenuPage');
+    
     this.date = new Date('February 21, 2018 8:01:00'); //23 = friday 21 = wednesday
     this.day = this.date.getDay();
 
@@ -123,6 +125,7 @@ export class MenuPage {
 
 
   order(itemName, item){
+
     this.orderItems.push(item);
 
 
@@ -140,16 +143,20 @@ export class MenuPage {
 
 
   ordersubmitted(){
-    // if (this.navParams.data === true){
-    //   this.navCtrl.push(OrderSubmitPage, [{items: this.orderItems}])
-    // }
-    // else{
-    //   this.navCtrl.push(LoginPage, [true, this.orderItems, this.orderPrice])
-    // }
-
+    if (this.navParams.data === true){
       this.navCtrl.push(OrderSubmitPage, [{items: this.orderItems}])
-  }
+    }
+    else{
+      let alert = this.alertCtrl.create({
+        title: 'Before You Submit...',
+        subTitle: 'You first need to login or register and then your order will be submitted!!',
+        buttons: ['OK']
+      });
+      alert.present();
+      this.navCtrl.push(LoginPage, [true, this.orderItems, this.orderPrice])
+    }
 
+  }
 
 }
 
