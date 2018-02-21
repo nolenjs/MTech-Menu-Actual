@@ -32,31 +32,41 @@ export class LoginPage {
     if (this.email){
       try {
         const result = await this.afAuth.auth.signInWithEmailAndPassword(this.user.email, this.user.password);
-        if (result) {
-          console.log("Signed IN!!!");
-          console.log(this.user.email, this.user.password);
+        this.displayResults(result)
+      }
+      catch (e) {
+        this.showError(e);
+      }
+    }
+    //If using the google login
+    else{
+      let provider = new firebase.auth.GoogleAuthProvider();
+      firebase.auth().signInWithPopup(provider);
+      firebase.auth().getRedirectResult()
+        .then((result) => {
+          console.log(result);
           if (this.navParams.data[0] === true){
             this.navCtrl.push(OrderSubmitPage, [this.navParams.data[1], this.navParams.data[2]])
           }
           else{
             this.navCtrl.push(MenuPage, true);
           }
-        }
-      }
-      catch (e) {
-        console.error(e);
-        let toast = this.toastCtrl.create({
-          message: e.message,
-          duration: 1800,
-          position: 'top'
+          if (result.credential) {
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            let token = result.credential.accessToken;
+            // ...
+          }
+          // The signed-in user info.
+          let googleUser = result.user;
+          console.log(googleUser);
+        })
+        .catch((error) => {
+          // Handle Errors here.
+          console.log(error.code);
+          console.log(error.message);
+          console.log(error.email);
+          console.log(error.credentials)
         });
-        toast.present();
-      }
-    }
-    //If using the google login
-    else{
-      let provider = new firebase.auth.GoogleAuthProvider();
-      firebase.auth().signInWithRedirect(provider);
     }
   }
 
@@ -68,24 +78,10 @@ export class LoginPage {
             this.user.email,
             this.user.password
           );
-          if (result) {
-            console.log("Registered!!!");
-            console.log(this.firstName, this.lastName, this.user.email, this.user.password, this.confirm);
-            if (this.navParams.data[0] === true){
-              this.navCtrl.push(OrderSubmitPage, [this.navParams.data[1], this.navParams.data[2]])
-            }
-            else{
-              this.navCtrl.push(MenuPage, true);
-            }
-          }
-        } catch (e) {
-          console.error(e);
-          let toast = this.toastCtrl.create({
-            message: e.message,
-            duration: 1800,
-            position: 'top'
-          });
-          toast.present()
+          this.displayResults(result)
+        }
+        catch (e) {
+          this.showError(e)
         }
         console.log("Passwords matched")
       }
@@ -101,5 +97,27 @@ export class LoginPage {
   changeShow(bool: boolean){
     //If login
     this.show = bool;
+  }
+
+  displayResults(result){
+    if (result) {
+      console.log("Registered or Signed in!!!");
+      if (this.navParams.data[0] === true){
+        this.navCtrl.push(OrderSubmitPage, [this.navParams.data[1], this.navParams.data[2]])
+      }
+      else{
+        this.navCtrl.push(MenuPage, true);
+      }
+    }
+  }
+
+  showError(error){
+    console.error(error);
+    let toast = this.toastCtrl.create({
+      message: error.message,
+      duration: 1800,
+      position: 'top'
+    });
+    toast.present();
   }
 }
