@@ -52,10 +52,17 @@ export class OrderSubmitPage {
     constructor(public navCtrl: NavController,
                 public navParams: NavParams,
 
+<<<<<<< HEAD
                 public toastCtrl: ToastController,
                 public db: AngularFireDatabase) {
         this.orderInformation = this.navParams.data[0];
         this.name = this.navParams.data[2];
+=======
+              public toastCtrl: ToastController,
+              public db: AngularFireDatabase) {
+     this.orderInformation = this.navParams.data[0];
+     this.name = this.navParams.data[2];
+>>>>>>> 0449456f7f4fa6cadd9a4532556185f6f0aa85e8
 
     }
 
@@ -87,8 +94,13 @@ export class OrderSubmitPage {
 
         console.log('pushing order');
 
+<<<<<<< HEAD
         let itemsRef = this.db.list('orderInfo');
         itemsRef.push({ order: this.orderInformation, name: this.name });
+=======
+      let itemsRef = this.db.list('orderInfo');
+      itemsRef.push({ order: this.orderInformation, name: this.name });
+>>>>>>> 0449456f7f4fa6cadd9a4532556185f6f0aa85e8
 
         let toast = this.toastCtrl.create({
             message: `Order Sent`,
