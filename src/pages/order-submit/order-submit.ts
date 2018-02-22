@@ -37,6 +37,8 @@ import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angula
     .menu-item:hover .hover-delete {
       visibility: visible;
     }
+      
+      
 
   `]
 })
@@ -63,9 +65,9 @@ export class OrderSubmitPage {
     toast.present();
   }
 
-  delete() {
-
-  }
+    delete(index){
+        (this.orderInformation.items).splice(index, 1);
+    };
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad OrderSubmitPage');
