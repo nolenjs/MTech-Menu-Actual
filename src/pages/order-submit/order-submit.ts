@@ -29,6 +29,16 @@ import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angula
       justify-content: center;
       align-items: center;
     }
+    
+    .hover-delete {
+      visibility: hidden;
+    }
+    
+    .menu-item:hover .hover-delete {
+      visibility: visible;
+    }
+      
+      
 
   `]
 })
@@ -39,7 +49,7 @@ export class OrderSubmitPage {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public toastCtrl: ToastController) {
-    this.orderInformation = this.navParams.data;
+    this.orderInformation = this.navParams.data[0];
   }
 
   confirm() {
@@ -54,6 +64,10 @@ export class OrderSubmitPage {
 
     toast.present();
   }
+
+    delete(index){
+        (this.orderInformation.items).splice(index, 1);
+    };
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad OrderSubmitPage');

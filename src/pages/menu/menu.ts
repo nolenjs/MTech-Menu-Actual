@@ -55,7 +55,7 @@ export class MenuPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MenuPage');
-    
+
     this.date = new Date('February 21, 2018 8:01:00'); //23 = friday 21 = wednesday
     this.day = this.date.getDay();
 
