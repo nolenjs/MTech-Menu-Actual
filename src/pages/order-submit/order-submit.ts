@@ -55,7 +55,7 @@ export class OrderSubmitPage {
               public toastCtrl: ToastController,
               public db: AngularFireDatabase) {
      this.orderInformation = this.navParams.data[0];
-    this.name = this.navParams.data[2];
+     this.name = this.navParams.data[2];
 
   }
 
@@ -88,7 +88,7 @@ export class OrderSubmitPage {
       console.log('pushing order');
 
       let itemsRef = this.db.list('orderInfo');
-      itemsRef.push({ name: this.orderInformation });
+      itemsRef.push({ order: this.orderInformation, name: this.name });
 
       let toast = this.toastCtrl.create({
           message: `Order Sent`,
