@@ -11,13 +11,27 @@
 <ion-content padding>
   <ion-card>
     <ion-card-header>
-      Order:
+        <div>
+            Order:
+        </div>
+
+
+
     </ion-card-header>
+
     <ion-list>
-      <ion-item *ngFor="let item of orderInformation[0].items">
+
+      <ion-item class="menu-item" *ngFor="let item of orderInformation.items; let i = index;">
+          <ion-icon  md="md-remove-circle" id={{item.id}} (click)="delete(i)">
+
+          </ion-icon>
+        <!--<button class="button button-icon icon ios-remove-circle" ng-click="showDelete = !showDelete">-->
         {{item}}
+        <!--</button>-->
+
       </ion-item>
     </ion-list>
+
   </ion-card>
   <button ion-button color="mtech-red" (click)="submitOrder()"><p class="alignRight">Send</p></button>
 </ion-content>

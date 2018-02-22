@@ -30,6 +30,16 @@ import {AngularFireDatabase} from 'angularfire2/database';
       justify-content: center;
       align-items: center;
     }
+    
+    .hover-delete {
+      visibility: hidden;
+    }
+    
+    .menu-item:hover .hover-delete {
+      visibility: visible;
+    }
+      
+      
 
   `]
 })
@@ -41,10 +51,12 @@ export class OrderSubmitPage {
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
+
               public toastCtrl: ToastController,
               public db: AngularFireDatabase) {
-    this.orderInformation = this.navParams.data;
+     this.orderInformation = this.navParams.data[0];
     this.name = this.navParams.data[2];
+
   }
 
   confirm() {
@@ -59,6 +71,10 @@ export class OrderSubmitPage {
 
     toast.present();
   }
+
+    delete(index){
+        (this.orderInformation.items).splice(index, 1);
+    };
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad OrderSubmitPage');
