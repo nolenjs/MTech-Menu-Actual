@@ -90,8 +90,9 @@ export class LoginPage {
                 displayName: this.firstName + ' ' + this.lastName,
                 photoURL: ""
             });
-            this.user.name = emailUser.displayName;
-            console.log(this.user.name);
+            this.user.account = emailUser;
+            console.log(this.user.account);
+              console.log(this.user.account.displayName);
           }
           catch (e) {
               this.showError(e)
@@ -114,12 +115,13 @@ export class LoginPage {
 
     displayResults(result){
     if (result) {
-      console.log("Registered or Signed in!!!");
+        console.log("Registered or Signed in!!!");
+        console.log(this.user.name);
       if (this.navParams.data[0] === true){
-        this.navCtrl.push(OrderSubmitPage, [this.navParams.data[1], this.navParams.data[2]])
+        this.navCtrl.push(OrderSubmitPage, [this.navParams.data[1], this.navParams.data[2], this.user.account])
       }
       else{
-        this.navCtrl.push(MenuPage, true);
+        this.navCtrl.push(MenuPage, [true, this.user.account]);
       }
     }
   }
