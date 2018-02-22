@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
+import {AngularFireDatabase} from 'angularfire2/database';
 
 /**
  * Generated class for the OrderSubmitPage page.
@@ -46,10 +47,16 @@ import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angula
 export class OrderSubmitPage {
   orderInformation;
 
+  name;
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              public toastCtrl: ToastController) {
-    this.orderInformation = this.navParams.data[0];
+
+              public toastCtrl: ToastController,
+              public db: AngularFireDatabase) {
+     this.orderInformation = this.navParams.data[0];
+    this.name = this.navParams.data[2];
+
   }
 
   confirm() {
@@ -72,6 +79,24 @@ export class OrderSubmitPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad OrderSubmitPage');
     console.log(this.orderInformation);
+    console.log('Name: ' + name);
+  }
+
+  submitOrder() {
+
+      console.log('pushing order');
+
+      let itemsRef = this.db.list('orderInfo');
+      itemsRef.push({ name: this.orderInformation });
+
+      let toast = this.toastCtrl.create({
+          message: `Order Sent`,
+          duration: 1000,
+          position: 'top'
+      });
+
+      toast.present();
+
   }
 
 
