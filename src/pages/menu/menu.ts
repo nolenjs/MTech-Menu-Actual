@@ -144,6 +144,7 @@ export class MenuPage {
 
   ordersubmitted(){
     if (this.navParams.data[0] === true){
+        console.log(this.navParams[1]);
       this.navCtrl.push(OrderSubmitPage, [{items: this.orderItems}, this.navParams[1]])
     }
     else{

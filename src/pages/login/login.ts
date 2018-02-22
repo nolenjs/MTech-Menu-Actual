@@ -55,15 +55,16 @@ export class LoginPage {
           // The signed-in user info.
           let googleUser = result.user;
           console.log(googleUser);
-          if (this.navParams.data[0] === true){
-              this.navCtrl.push(OrderSubmitPage, [
-                      this.navParams.data[1],
-                      this.navParams.data[2],
-                      googleUser.displayName
-              ]);
+          console.log(googleUser.displayName);
+           if (this.navParams.data[0] === true){
+               this.navCtrl.push(OrderSubmitPage, [
+                   this.navParams.data[1],
+                   this.navParams.data[2],
+                   googleUser.displayName
+               ])
           }
           else{
-              this.navCtrl.push(MenuPage, [true, googleUser.displayName]);
+               this.navCtrl.push(MenuPage, [true, googleUser.displayName])
           }
       })
         .catch((error) => {

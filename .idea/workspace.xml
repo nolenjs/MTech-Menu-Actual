@@ -4,7 +4,37 @@
     <list default="true" id="9988d3c7-7fd3-4bb6-9efb-0fc8d89ec342" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sourcemaps/main.js.map" afterPath="$PROJECT_DIR$/.sourcemaps/main.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/0.js" afterPath="$PROJECT_DIR$/www/build/0.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/core/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular-devkit/core/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/schematics/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular-devkit/schematics/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/cli/lib/cli/index.js" afterPath="$PROJECT_DIR$/node_modules/@angular/cli/lib/cli/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/cli/lib/cli/index.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/cli/lib/cli/index.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/cli/node_modules/@angular-devkit/build-optimizer/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular/cli/node_modules/@angular-devkit/build-optimizer/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/cli/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular/cli/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/cli/plugins/postcss-cli-resources.js" afterPath="$PROJECT_DIR$/node_modules/@angular/cli/plugins/postcss-cli-resources.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/cli/plugins/postcss-cli-resources.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/cli/plugins/postcss-cli-resources.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/cli/tasks/lint.js" afterPath="$PROJECT_DIR$/node_modules/@angular/cli/tasks/lint.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/cli/tasks/lint.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/cli/tasks/lint.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/cli/tasks/serve.js" afterPath="$PROJECT_DIR$/node_modules/@angular/cli/tasks/serve.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/cli/tasks/serve.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/cli/tasks/serve.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ngtools/webpack/package.json" afterPath="$PROJECT_DIR$/node_modules/@ngtools/webpack/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ngtools/webpack/src/angular_compiler_plugin.js" afterPath="$PROJECT_DIR$/node_modules/@ngtools/webpack/src/angular_compiler_plugin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ngtools/webpack/src/angular_compiler_plugin.js.map" afterPath="$PROJECT_DIR$/node_modules/@ngtools/webpack/src/angular_compiler_plugin.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ngtools/webpack/src/paths-plugin.js" afterPath="$PROJECT_DIR$/node_modules/@ngtools/webpack/src/paths-plugin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ngtools/webpack/src/paths-plugin.js.map" afterPath="$PROJECT_DIR$/node_modules/@ngtools/webpack/src/paths-plugin.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ngtools/webpack/src/transformers/elide_imports.js" afterPath="$PROJECT_DIR$/node_modules/@ngtools/webpack/src/transformers/elide_imports.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@ngtools/webpack/src/transformers/elide_imports.js.map" afterPath="$PROJECT_DIR$/node_modules/@ngtools/webpack/src/transformers/elide_imports.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@schematics/angular/application/files/__dot__gitignore" afterPath="$PROJECT_DIR$/node_modules/@schematics/angular/application/files/__dot__gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@schematics/angular/package.json" afterPath="$PROJECT_DIR$/node_modules/@schematics/angular/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@schematics/package-update/package.json" afterPath="$PROJECT_DIR$/node_modules/@schematics/package-update/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@schematics/package-update/utility/npm.js" afterPath="$PROJECT_DIR$/node_modules/@schematics/package-update/utility/npm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/html-minifier/node_modules/uglify-js/lib/compress.js" afterPath="$PROJECT_DIR$/node_modules/html-minifier/node_modules/uglify-js/lib/compress.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/html-minifier/node_modules/uglify-js/package.json" afterPath="$PROJECT_DIR$/node_modules/html-minifier/node_modules/uglify-js/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/login/login.ts" afterPath="$PROJECT_DIR$/src/pages/login/login.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/menu/menu.ts" afterPath="$PROJECT_DIR$/src/pages/menu/menu.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/order-submit/order-submit.html" afterPath="$PROJECT_DIR$/src/pages/order-submit/order-submit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/order-submit/order-submit.ts" afterPath="$PROJECT_DIR$/src/pages/order-submit/order-submit.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/main.js" afterPath="$PROJECT_DIR$/www/build/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/main.js.map" afterPath="$PROJECT_DIR$/www/build/main.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/vendor.js" afterPath="$PROJECT_DIR$/www/build/vendor.js" />
@@ -35,11 +65,47 @@
       <file leaf-file-name="login.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/login/login.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="109" column="7" lean-forward="false" selection-start-line="109" selection-start-column="7" selection-end-line="109" selection-end-column="7" />
+            <state relative-caret-position="171">
+              <caret line="61" column="42" lean-forward="true" selection-start-line="61" selection-start-column="42" selection-end-line="61" selection-end-column="42" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="menu.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/menu/menu.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="213">
+              <caret line="146" column="39" lean-forward="false" selection-start-line="146" selection-start-column="39" selection-end-line="146" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="order-submit.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/order-submit/order-submit.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="79" column="54" lean-forward="true" selection-start-line="79" selection-start-column="54" selection-end-line="79" selection-end-column="54" />
+              <folding>
+                <marker date="1519316105982" expanded="true" signature="490:538" ph="{...}" />
+                <marker date="1519316105982" expanded="true" signature="557:625" ph="{...}" />
+                <marker date="1519316105982" expanded="true" signature="652:793" ph="{...}" />
+                <marker date="1519316105982" expanded="true" signature="817:860" ph="{...}" />
+                <marker date="1519316105982" expanded="true" signature="901:945" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="order-submit.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/order-submit/order-submit.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="239">
+              <caret line="23" column="76" lean-forward="false" selection-start-line="23" selection-start-column="76" selection-end-line="23" selection-end-column="76" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -72,6 +138,7 @@
       <find>var</find>
       <find>show</find>
       <find>navParams</find>
+      <find>//</find>
     </findStrings>
     <replaceStrings>
       <replace>'</replace>
@@ -100,11 +167,11 @@
         <option value="$PROJECT_DIR$/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/src/pages/home/home.html" />
         <option value="$PROJECT_DIR$/src/pages/home/home.ts" />
-        <option value="$PROJECT_DIR$/src/pages/order-submit/order-submit.ts" />
-        <option value="$PROJECT_DIR$/src/pages/order-submit/order-submit.html" />
         <option value="$PROJECT_DIR$/src/pages/login/login.html" />
-        <option value="$PROJECT_DIR$/src/pages/menu/menu.ts" />
         <option value="$PROJECT_DIR$/src/interfaces/IUser.ts" />
+        <option value="$PROJECT_DIR$/src/pages/menu/menu.ts" />
+        <option value="$PROJECT_DIR$/src/pages/order-submit/order-submit.html" />
+        <option value="$PROJECT_DIR$/src/pages/order-submit/order-submit.ts" />
         <option value="$PROJECT_DIR$/src/pages/login/login.ts" />
       </list>
     </option>
@@ -124,7 +191,7 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="52" />
+    <option name="y" value="23" />
     <option name="width" value="1225" />
     <option name="height" value="777" />
   </component>
@@ -181,12 +248,6 @@
               <item name="MTech-Menu-Actual" type="b2602c69:ProjectViewProjectNode" />
               <item name="MTech-Menu-Actual" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MTech-Menu-Actual" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MTech-Menu-Actual" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="interfaces" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -200,20 +261,7 @@
               <item name="MTech-Menu-Actual" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MTech-Menu-Actual" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MTech-Menu-Actual" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="menu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MTech-Menu-Actual" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MTech-Menu-Actual" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="providers" type="462c0819:PsiDirectoryNode" />
+              <item name="order-submit" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -263,15 +311,16 @@
       <option name="presentableId" value="Default" />
       <updated>1518456542118</updated>
       <workItem from="1518456543397" duration="16667000" />
-      <workItem from="1518627078419" duration="35711000" />
+      <workItem from="1518627078419" duration="39709000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52378000" />
+    <option name="totallyTimeSpent" value="56376000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="52" width="1225" height="777" extended-state="0" />
+    <frame x="0" y="23" width="1225" height="777" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991204" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -281,7 +330,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31671554" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31671554" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -329,7 +378,7 @@
         <state relative-caret-position="15">
           <caret line="3" column="2" lean-forward="false" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
           <folding>
-            <element signature="e#0#42#0" expanded="true" />
+            <element signature="e#0#42#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -507,36 +556,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/order-submit/order-submit.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="59" column="40" lean-forward="false" selection-start-line="59" selection-start-column="40" selection-end-line="59" selection-end-column="40" />
-          <folding>
-            <marker date="1519311901326" expanded="true" signature="421:459" ph="{...}" />
-            <marker date="1519311901326" expanded="true" signature="474:526" ph="{...}" />
-            <marker date="1519311901326" expanded="true" signature="549:662" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/order-submit/order-submit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="61" lean-forward="false" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/menu/menu.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2400">
-          <caret line="160" column="1" lean-forward="true" selection-start-line="160" selection-start-column="1" selection-end-line="160" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/login/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="305">
@@ -553,10 +572,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/order-submit/order-submit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="23" column="76" lean-forward="false" selection-start-line="23" selection-start-column="76" selection-end-line="23" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/order-submit/order-submit.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="79" column="54" lean-forward="true" selection-start-line="79" selection-start-column="54" selection-end-line="79" selection-end-column="54" />
+          <folding>
+            <marker date="1519316105982" expanded="true" signature="490:538" ph="{...}" />
+            <marker date="1519316105982" expanded="true" signature="557:625" ph="{...}" />
+            <marker date="1519316105982" expanded="true" signature="652:793" ph="{...}" />
+            <marker date="1519316105982" expanded="true" signature="817:860" ph="{...}" />
+            <marker date="1519316105982" expanded="true" signature="901:945" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/menu/menu.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="146" column="39" lean-forward="false" selection-start-line="146" selection-start-column="39" selection-end-line="146" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/login/login.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="109" column="7" lean-forward="false" selection-start-line="109" selection-start-column="7" selection-end-line="109" selection-end-column="7" />
+        <state relative-caret-position="171">
+          <caret line="61" column="42" lean-forward="true" selection-start-line="61" selection-start-column="42" selection-end-line="61" selection-end-column="42" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
           </folding>
